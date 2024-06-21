@@ -1,4 +1,5 @@
 add_namespace = COX_BRY
+
 country_event = {
 	id = COX_BRY.1
 	title = COX_BRY.1.t
@@ -11,37 +12,30 @@ country_event = {
 		custom_effect_tooltip = help_from_IRK
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
 				load_oob = "Red_Army_1_1962"
-				country_event = {
-					id = COX_BRY.2
-					days = 2
-				}
-				country_event = {
-					id = COX_BRY.11
-					days = 6
-				}
-				add_war_support = 0.1
-				add_ideas = BRY_China_juntuan_help
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_2
-					amount = 500
-					producer = IRK
-				}
-				COX = {
-					COX_Mao_Anying = {
-						set_nationality = BRY
-					}
+			country_event = {
+				id = COX_BRY.2
+				days = 2
+			}
+			country_event = {
+				id = COX_BRY.11
+				days = 6
+			}
+			add_war_support = 0.1
+			add_ideas = BRY_China_juntuan_help
+			add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 500 producer = IRK } 
+			COX = {
+				COX_Mao_Anying = {
+					set_nationality = BRY
 				}
 			}
 		}
+		}
 	}
 }
-
 country_event = {
 	id = COX_BRY.2
 	title = COX_BRY.2.t
@@ -53,19 +47,14 @@ country_event = {
 		name = COX_BRY.2.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				country_event = {
-					id = COX_BRY.3
-					days = 2
-				}
-			}
+			country_event = { id = COX_BRY.3 days = 2 }
 		}
 	}
-}
+		}
+}	
 
 country_event = {
 	id = COX_BRY.3
@@ -78,7 +67,6 @@ country_event = {
 		name = COX_BRY.3.a
 	}
 }
-
 country_event = {
 	id = COX_BRY.4
 	title = COX_BRY.4.t
@@ -90,22 +78,15 @@ country_event = {
 		name = COX_BRY.4.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				country_event = {
-					id = COX_BRY.5
-					days = 2
-				}
-			}
+			country_event = { id = COX_BRY.5 days = 2 }
+		}
 		}
 	}
 }
-
-country_event = {
-	#援助安人
+country_event = {#援助安人
 	id = COX_BRY.5
 	title = COX_BRY.5.t
 	desc = COX_BRY.5.d
@@ -116,22 +97,16 @@ country_event = {
 		name = COX_BRY.5.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				country_event = {
-					id = COX_BRY.6
-					days = 5
-				}
-			}
+			country_event = { id = COX_BRY.6 days = 5 }
+		}
 		}
 	}
 }
-
 country_event = {
-	id = COX_BRY.6	#从安人处回来
+	id = COX_BRY.6#从安人处回来
 	title = COX_BRY.6.t
 	desc = COX_BRY.6.d
 	picture = GFX_Envoy_To_The_Anarchist_Soviet
@@ -141,61 +116,50 @@ country_event = {
 		name = COX_BRY.6.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				country_event = {
-					id = COX_BRY.9
-					days = 5
-				}
-			}
+			country_event = { id = COX_BRY.9 days = 5 }
+		}
 		}
 	}
 }
-
 country_event = {
-	id = COX_BRY.7	#远望草原之上
+	id = COX_BRY.7#远望草原之上
 	title = COX_BRY.7.t
 	desc = COX_BRY.7.d
 	picture = GFX_beyond_the_steppe
-	is_triggered_only = yes
+	is_triggered_only = yes	
 	fire_only_once = yes
 	option = {
 		name = COX_BRY.7.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-			}
-			PRC = {
-				change_tag_from = ROOT
-			}
-			PRC = {
-				country_event = {
-					id = PRC.3000
-					days = 2
-				}
-			}
-			hidden_effect = {
-				delete_unit_template_and_units = {
-					division_template = "苏维埃近卫步兵旅"
-				}
-				COX_Mao_Anying = {
-					set_nationality = PRC
-				}
+		PRC = { change_tag_from = ROOT }
+		PRC = { 
+			country_event = { 
+				id = PRC.3000
+				days = 2
 			}
 		}
+		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "苏维埃近卫步兵旅"
+			}
+			COX_Mao_Anying = {
+				set_nationality = PRC
+			}
+		}
+				}
 	}
 	option = {
 		name = COX_BRY.7.b
 	}
 }
-
 country_event = {
-	id = COX_BRY.8	#麻醉剂
+	id = COX_BRY.8#麻醉剂
 	title = COX_BRY.8.t
 	desc = COX_BRY.8.d
 	picture = GFX_narcotic
@@ -207,7 +171,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX_BRY.11	#威震四海联动事件
+	id = COX_BRY.11#威震四海联动事件
 	title = COX_BRY.11.t
 	desc = COX_BRY.11.d
 	picture = GFX_TGO
@@ -217,8 +181,10 @@ country_event = {
 		name = COX_BRY.11.a
 	}
 }
+
+
 country_event = {
-	id = COX_BRY.9	#乡音与贝加尔湖
+	id = COX_BRY.9#乡音与贝加尔湖
 	title = COX_BRY.9.t
 	desc = COX_BRY.9.d
 	picture = GFX_voice_of_homeland
@@ -228,20 +194,14 @@ country_event = {
 		name = COX_BRY.9.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				country_event = {
-					id = COX_BRY.7
-					days = 2
-				}
-			}
+			country_event = { id = COX_BRY.7 days = 2 }
+		}
 		}
 	}
 }
-
 country_event = {
 	id = COX_BRY.10
 	title = COX_BRY.10.t
@@ -253,39 +213,31 @@ country_event = {
 		name = COX_BRY.10.a
 		hidden_effect = {
 			if = {
-				limit = {
-					NOT = {
-						has_global_flag = COX_tiaoguan_1
-					}
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-				set_temp_variable = {
-					pus_temp = 4
-				}
-				econ_pus_change = yes
-				load_oob = "BRY_1962_2"
-				random_owned_controlled_state = {
-					set_temp_variable = {
-						temp_state_value_addition = 0.2
-					}
-					econ_state_value_change_addition = yes
-				}
+			set_temp_variable = { pus_temp = 4 }
+			econ_pus_change = yes
+			load_oob = "BRY_1962_2"
+			random_owned_controlled_state = {
+				set_temp_variable = { temp_state_value_addition = 0.2 }
+				econ_state_value_change_addition = yes
 			}
-			PRC = {
-				hidden_effect = {
-					load_oob = "PRC_1962_2"
-				}
-				random_owned_controlled_state = {
-					set_temp_variable = {
-						temp_state_value_addition = 0.1
-					}
-					econ_state_value_change_addition = yes
-					add_resource = {
-						type = power
-						amount = 5
-					}
-				}
+		}	
+		PRC = {
+			hidden_effect = {
+				load_oob = "PRC_1962_2"
 			}
+			random_owned_controlled_state = {
+				set_temp_variable = { temp_state_value_addition = 0.1 }
+				econ_state_value_change_addition = yes
+				add_resource = {
+					type = power
+					amount = 5
+				}
+			}	
 		}
+				}
 	}
 }
 
@@ -458,338 +410,294 @@ add_namespace = PRC
 #		}
 #	}
 ##}
-country_event = {
-	#华司机1
+
+country_event = { #华司机1
 	id = PRC.3000
 	title = PRC.3000.t
 	desc = PRC.3000.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = PRC.3000.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		ai_chance = { factor = 1 }
+		add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 500 producer = BRY } 
+		hidden_effect={
+			load_oob = "Red_Army_2_1962"
+		}
+		add_ideas = BRY_China_juntuan_help
+		PRC = { 
+			country_event = { 
+				id = PRC.3001 
+				days = 2
 			}
-			ai_chance = {
-				factor = 1
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_2
-				amount = 500
-				producer = BRY
-			}
-			hidden_effect = {
-				load_oob = "Red_Army_2_1962"
-			}
-			add_ideas = BRY_China_juntuan_help
-			PRC = {
-				country_event = {
-					id = PRC.3001
-					days = 2
-				}
-			}
+		}
 		}
 	}
 }
-
-country_event = {
-	#华司机2
+country_event = { #华司机2
 	id = PRC.3001
 	title = PRC.3001.t
 	desc = PRC.3001.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = PRC.3001.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		PRC = { 
+			country_event = { 
+				id = PRC.3002 
+				days = 2
 			}
-			PRC = {
-				country_event = {
-					id = PRC.3002
-					days = 2
-				}
-			}
+		}
 		}
 	}
 }
-
-country_event = {
-	#华司机3
+country_event = { #华司机3
 	id = PRC.3002
 	title = PRC.3002.t
 	desc = PRC.3002.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = PRC.3002.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		PRC = { 
+			country_event = { 
+				id = PRC.30021
+				days = 2
 			}
-			PRC = {
-				country_event = {
-					id = PRC.30021
-					days = 2
+		}
+		}
+	}
+	option = { 
+		name = PRC.3002.b
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		PRC = { 
+			country_event = { 
+				id = PRC.30022
+				days = 2
 			}
 		}
 	}
-	option = {
-		name = PRC.3002.b
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
-				}
-			}
-			PRC = {
-				country_event = {
-					id = PRC.30022
-					days = 2
-				}
-			}
-		}
 	}
 }
-
-country_event = {
-	#华司机3a
+country_event = { #华司机3a
 	id = PRC.30021
 	title = PRC.30021.t
 	desc = PRC.30021.d
 	picture = COX_Carnival_night
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = PRC.30021.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		PRC = { 
+			country_event = { 
+				id = PRC.3003 
+				days = 2
 			}
-			PRC = {
-				country_event = {
-					id = PRC.3003
-					days = 2
-				}
-			}
+		}
 		}
 	}
 }
-
-country_event = {
-	#华司机3b
+country_event = { #华司机3b
 	id = PRC.30022
 	title = PRC.30022.t
 	desc = PRC.30022.d
 	picture = COX_one_night_in_Town
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = PRC.30022.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		PRC = { 
+			country_event = { 
+				id = PRC.3003 
+				days = 2
 			}
-			PRC = {
-				country_event = {
-					id = PRC.3003
-					days = 2
-				}
-			}
+		}
 		}
 	}
 }
-
-country_event = {
-	#华司机4
+country_event = { #华司机4
 	id = PRC.3003
 	title = PRC.3003.t
 	desc = PRC.3003.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
+	
 	option = {
 		name = PRC.3003.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		ALT = { change_tag_from = ROOT }
+		ALT = { 
+			country_event = { 
+				id = ALT.1
+				days = 2
 			}
-			ALT = {
-				change_tag_from = ROOT
+		}
+		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "苏维埃近卫步兵旅"
 			}
-			ALT = {
-				country_event = {
-					id = ALT.1
-					days = 2
-				}
+			COX_Mao_Anying = {
+				set_nationality = ALT
 			}
-			hidden_effect = {
-				delete_unit_template_and_units = {
-					division_template = "苏维埃近卫步兵旅"
-				}
-				COX_Mao_Anying = {
-					set_nationality = ALT
-				}
-			}
+		}
 		}
 	}
 }
 
-add_namespace = ALT#奥伊罗特
-country_event = {
-	#奥伊罗特1
+
+add_namespace = ALT #奥伊罗特
+
+country_event = { #奥伊罗特1
 	id = ALT.1
 	title = ALT.1.t
 	desc = ALT.1.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	
+	option = { 
 		name = ALT.1.a
-		ai_chance = {
-			factor = 1
+		ai_chance = { factor = 1 }
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
+				}
+		add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 500 producer = BRY }
+		hidden_effect = {
+			load_oob = "Red_Army_ALT_1962"
+			add_ideas = BRY_China_juntuan_help
 		}
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
-				}
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment_2
-				amount = 500
-				producer = BRY
-			}
-			hidden_effect = {
-				load_oob = "Red_Army_ALT_1962"
-				add_ideas = BRY_China_juntuan_help
-			}
-			ALT = {
-				country_event = {
-					id = ALT.2
-					days = 2
-				}
+		ALT = { 
+			country_event = { 
+				id = ALT.2 
+				days = 2
 			}
 		}
 	}
+	}
 }
 
-country_event = {
-	#奥伊罗特2
+country_event = { #奥伊罗特2
 	id = ALT.2
 	title = ALT.2.t
 	desc = ALT.2.d
 	picture = COX_Carnival_night
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	option = { 
 		name = ALT.2.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		ALT = { 
+			country_event = { 
+				id = ALT.3 
+				days = 1
 			}
-			ALT = {
-				country_event = {
-					id = ALT.3
-					days = 1
-				}
-			}
+		}
 		}
 	}
 }
-
-country_event = {
-	#奥伊罗特3
+country_event = { #奥伊罗特3
 	id = ALT.3
 	title = ALT.3.t
 	desc = ALT.3.d
 	picture = COX_Carnival_night
 	is_triggered_only = yes
 	fire_only_once = yes
-	option = {
+	option = { 
 		name = ALT.3.a
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
-			}
-			ALT = {
-				country_event = {
-					id = ALT.5
-					days = 2
-				}
+		ALT = { 
+			country_event = { 
+				id = ALT.5 
+				days = 2
 			}
 		}
 	}
+	}
 }
 
+
+
 country_event = {
-	id = ALT.5	#奥伊罗特(离开)
+	id = ALT.5 #奥伊罗特(离开)
 	title = ALT.5.t
 	desc = ALT.5.d
 	picture = GFX_Assistance_To_PRC
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = ALT.5.a
 		custom_effect_tooltip = COX_army_change_tt
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = COX_tiaoguan_1
+			if = {
+				limit = { 
+			NOT = { has_global_flag = COX_tiaoguan_1}
 				}
+		COX = { set_country_flag = TNO_Country_Info_Screen_Visible }
+		COX_xin_civilwar_startup = yes
+		hidden_effect = {
+			COX = { change_tag_from = ROOT }
+			BRY = {
+				country_event = { id = COX_BRY.10 days = 2 }
+			}
+			COX_Mao_Anying = {
+				set_nationality = COX
 			}
 			COX = {
-				set_country_flag = TNO_Country_Info_Screen_Visible
-			}
-			COX_xin_civilwar_startup = yes
-			hidden_effect = {
-				COX = {
-					change_tag_from = ROOT
-				}
-				BRY = {
-					country_event = {
-						id = COX_BRY.10
-						days = 2
-					}
-				}
 				COX_Mao_Anying = {
-					set_nationality = COX
-				}
-				COX = {
-					COX_Mao_Anying = {
-						promote_character = {
-							ideology = communist_mao_zedong_thought_subtype
-						}
+					promote_character = {
+						ideology = communist_mao_zedong_thought_subtype
 					}
 				}
 			}
 		}
 	}
+	}
 }
 
 add_namespace = COX
+
 country_event = {
 	id = COX.1
 	title = COX.1.t
@@ -801,7 +709,12 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = COX.1.a
-	}
+		set_party_name = {
+			ideology = communist
+			long_name = COX_communist_party_XIN_long
+			name = COX_communist_party_XIN
+		}
+	} 
 }
 
 country_event = {
@@ -829,16 +742,14 @@ country_event = {
 	}
 	is_triggered_only = yes
 	option = {
-		name = COX.3.a
+	name = COX.3.a
 		#暂不知如何处理
 		#add_ideas = tno_conscription_one_year_draft
 		add_stability = 0.05
-		country_event = {
-			id = COX.1
-		}
+		country_event = { id = COX.1 }
 	}
+	
 }
-
 country_event = {
 	id = COX.4
 	title = COX.4.t
@@ -849,7 +760,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	option = {
-		name = COX.4.a
+	name = COX.4.a
 	}
 }
 
@@ -863,7 +774,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	option = {
-		name = COX.5.a
+		name = COX.5.a	 
 	}
 }
 
@@ -876,89 +787,74 @@ country_event = {
 	option = {
 		name = COX.6.a
 		hidden_effect = {
-			COX = {
-				country_event = {
-					id = COX.10
-				}
+			COX={
+				country_event = { id = COX.10 }
 			}
 			load_oob = "HONGJUNWUDI"
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 500000
-				producer = WRS
-			}
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = 500000
-				producer = WRS
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 500000
-				producer = WRS
-			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 500000 producer = WRS }
+			add_equipment_to_stockpile = { type = support_equipment amount = 500000 producer = WRS }
+			add_equipment_to_stockpile = { type = artillery_equipment amount = 500000 producer = WRS }
 			add_ideas = INSANE
 		}
 		create_corps_commander = {
-			name = "陈奇涵"
-			portrait_path = "gfx/leaders/COX/Chen_Qihan.dds"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
+				name = "陈奇涵"
+				portrait_path = "gfx/leaders/COX/Chen_Qihan.dds"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
 		}
 		create_corps_commander = {
-			name = "林彪"
-			portrait_path = "gfx/leaders/COX/Lin_Biao.png"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
+				name = "林彪"
+				portrait_path = "gfx/leaders/COX/Lin_Biao.png"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
 		}
 		create_corps_commander = {
-			name = "刘伯承"
-			portrait_path = "gfx/leaders/COX/Liu_Bocheng.png"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
+				name = "刘伯承"
+				portrait_path = "gfx/leaders/COX/Liu_Bocheng.png"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
 		}
 		create_corps_commander = {
-			name = "毛远新"
-			portrait_path = "gfx/leaders/COX/Mao_Yuanxin.png"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
+				name = "毛远新"
+				portrait_path = "gfx/leaders/COX/Mao_Yuanxin.png"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
 		}
 		create_corps_commander = {
-			name = "彭德怀"
-			portrait_path = "gfx/leaders/COX/Peng_Dehuai.png"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
+				name = "彭德怀"
+				portrait_path = "gfx/leaders/COX/Peng_Dehuai.png"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
 		}
 		create_corps_commander = {
-			name = "粟裕"
-			portrait_path = "gfx/leaders/COX/Su_yu.png"
-			skill = 9
-			attack_skill = 9
-			defense_skill = 9
-			planning_skill = 9
-			logistics_skill = 9
-		}
+				name = "粟裕"
+				portrait_path = "gfx/leaders/COX/Su_yu.png"
+				skill = 9
+				attack_skill = 9
+				defense_skill = 9
+				planning_skill = 9
+				logistics_skill = 9
+		}										
 	}
 	option = {
 		name = COX.6.b
 	}
 }
-
 country_event = {
 	id = COX.7
 	title = COX.7.t
@@ -975,7 +871,6 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
 	id = COX.8
 	title = COX.8.t
@@ -988,7 +883,6 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
 	id = COX.9
 	title = COX.9.t
@@ -1001,9 +895,8 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
-	id = COX.10	#天堂之门-毛泽东归来
+	id = COX.10 #天堂之门-毛泽东归来
 	title = COX.10.t
 	desc = COX.10.d
 	#picture = GFX_COX_event_COX_10
@@ -1013,7 +906,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = COX.10.a
-		COX = {
+		COX={
 			promote_character = PRC_Mao_Zedong
 		}
 		custom_effect_tooltip = Mao_comes_back_Everything_Changed
@@ -1045,78 +938,24 @@ country_event = {
 			name = "中国人民解放军"
 			division_names_group = COX_Infantry
 			regiments = {
-				infantry = {
-					x = 0
-					y = 0
-				}
-				infantry = {
-					x = 0
-					y = 1
-				}
-				infantry = {
-					x = 0
-					y = 2
-				}
-				infantry = {
-					x = 0
-					y = 3
-				}
-				infantry = {
-					x = 1
-					y = 0
-				}
-				infantry = {
-					x = 1
-					y = 1
-				}
-				infantry = {
-					x = 1
-					y = 2
-				}
-				infantry = {
-					x = 1
-					y = 3
-				}
-				infantry = {
-					x = 2
-					y = 0
-				}
-				infantry = {
-					x = 2
-					y = 1
-				}
-				infantry = {
-					x = 2
-					y = 2
-				}
-				infantry = {
-					x = 2
-					y = 3
-				}
-				artillery_brigade = {
-					x = 3
-					y = 0
-				}
-				artillery_brigade = {
-					x = 3
-					y = 1
-				}
-				artillery_brigade = {
-					x = 3
-					y = 2
-				}
-				artillery_brigade = {
-					x = 4
-					y = 0
-				}
-				artillery_brigade = {
-					x = 4
-					y = 1
-				}
-				artillery_brigade = {
-					x = 4
-					y = 2
-				}
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 1 y = 3 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+				infantry = { x = 2 y = 3 }
+				artillery_brigade = { x = 3 y = 0 }
+				artillery_brigade = { x = 3 y = 1 }
+				artillery_brigade = { x = 3 y = 2 }
+				artillery_brigade = { x = 4 y = 0 }
+				artillery_brigade = { x = 4 y = 1 }
+				artillery_brigade = { x = 4 y = 2 }
 			}
 		}
 		random_owned_controlled_state = {
@@ -1150,10 +989,7 @@ country_event = {
 		hidden_effect = {
 			add_ideas = PRC_Mao_Zedong_Thought
 			add_ideas = COX_Peoples_Army
-			country_event = {
-				id = COX.999
-				days = 15
-			}
+			country_event = { id = COX.999 days = 15 }
 			every_country = {
 				news_event = COX_news_event.5
 			}
@@ -1162,49 +998,30 @@ country_event = {
 }
 
 country_event = {
-	id = COX.11	#占领乌鲁木齐触发
+	id = COX.11 #占领乌鲁木齐触发
 	title = COX.11.t
 	desc = COX.11.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	fire_only_once = yes
+
 	option = {
 		name = COX.11.a
-		country_event = {
-			id = COX.31
-		}
+		country_event = { id = COX.31 }
 		hidden_effect = {
-			annex_country = {
-				target = XIN
-				transfer_troops = no
-			}
-			hidden_effect = {
-				set_global_flag = show_peace_popup_alert
-				COX = {
-					save_global_event_target_as = winning_country
+			COX = {
+				white_peace = XIN
+				annex_country = {
+					target = XIN
+					transfer_troops = no
 				}
-				XIN = {
-					save_global_event_target_as = losing_country
-				}
-				set_global_flag = losing_country_multiple
-				set_global_flag = winning_country_multiple
-				COX = {
-					# winner simply gets GDP recalculated :
-					recalculate_GDP_and_PUs_on_demand = yes
-				}
-				log = "war_won"
-				set_global_flag = war_won
-				add_to_variable = {
-					global.peace_popup_dirty = 1
-				}
-				log = "[GetDateText]: winner/loser: FROM: [winning_country.GetName] ROOT: [losing_country.GetName] on_capitulation"
 			}
 		}
 	}
-}
+}	
 
 country_event = {
-	id = COX.12	#
+	id = COX.12  #
 	title = COX.12.t
 	desc = COX.12.d
 	picture = GFX_report_event_chinese_army_training
@@ -1212,15 +1029,11 @@ country_event = {
 	option = {
 		name = COX.12.a
 		hidden_effect = {
-			country_event = {
-				id = COX.13
-				days = 0
-			}
-		}
+		country_event = { id = COX.13 days = 0 }
+		}	
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.13
 	title = COX.13.t
@@ -1234,115 +1047,109 @@ country_event = {
 }
 
 country_event = {
-	id = COX.18	#到农村去！
+	id = COX.18 #到农村去！
 	title = COX.18.t
 	desc = COX.18.d
 	picture = GFX_To_The_Countryside
 	is_triggered_only = yes
 	option = {
-		name = COX.18.a
+		name = COX.18.a	
 		unlock_decision_category_tooltip = COX_coring_category
 	}
 	fire_only_once = yes
 }
 
 country_event = {
-	id = COX.20	#迪化讲话！
+	id = COX.20 #迪化讲话！
 	title = COX.20.t
 	desc = COX.20.d
 	picture = GFX_Di_Hua_Spoke
 	is_triggered_only = yes
 	option = {
-		name = COX.20.a
+		name = COX.20.a	
 	}
 	fire_only_once = yes
 }
 
 country_event = {
-	id = COX.22	#报告！
+	id = COX.22 #报告！
 	title = COX.22.t
 	desc = COX.22.d
 	picture = GFX_Report
 	is_triggered_only = yes
 	option = {
-		name = COX.22.a
+		name = COX.22.a	
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.23	#诉苦大会！
+	id = COX.23 #诉苦大会！
 	title = COX.23.t
 	desc = COX.23.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.23.a
+		name = COX.23.a	
 		COX_landreform_global_fs_gain = yes
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.24	#包清三的日记！
+	id = COX.24 #包清三的日记！
 	title = COX.24.t
 	desc = COX.24.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.24.a
+		name = COX.24.a	
 		COX_landreform_global_fs_gain = yes
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.25	#公审！
+	id = COX.25 #公审！
 	title = COX.25.t
 	desc = COX.25.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.25.a
+		name = COX.25.a	
 		COX_landreform_global_fs_gain = yes
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.26	#水！
+	id = COX.26 #水！
 	title = COX.26.t
 	desc = COX.26.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.26.a
+		name = COX.26.a	
 		COX_landreform_global_fs_gain = yes
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.27	#算总账！
+	id = COX.27 #算总账！
 	title = COX.27.t
 	desc = COX.27.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.27.a
+		name = COX.27.a	
 		COX_landreform_global_fs_gain = yes
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.28	#战天斗地1！
+	id = COX.28 #战天斗地1！
 	title = COX.28.t
 	desc = COX.28.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
-		name = COX.28.a
+		name = COX.28.a	
 	}
 	fire_only_once = yes
 }
@@ -1361,7 +1168,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.31
 	title = COX.31.t
@@ -1403,7 +1209,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.87
 	title = COX.87.t
@@ -1415,9 +1220,8 @@ country_event = {
 		COX = {
 			country_event = COX.88
 		}
-	}
+	}	
 }
-
 country_event = {
 	id = COX.88
 	title = COX.88.t
@@ -1444,14 +1248,13 @@ country_event = {
 			#}
 			recruit_character = COX_Abbasof
 		}
-	}
+	}	
 	option = {
 		name = COX.88.b
 		army_experience = 2
 		add_political_power = 25
 	}
 }
-
 country_event = {
 	id = COX.34
 	title = COX.34.t
@@ -1466,7 +1269,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.35
 	title = COX.35.t
@@ -1487,7 +1289,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.36
 	title = COX.36.t
@@ -1499,7 +1300,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.37
 	title = COX.37.t
@@ -1511,7 +1311,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.38
 	title = COX.38.t
@@ -1523,7 +1322,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.39
 	title = COX.39.t
@@ -1538,7 +1336,6 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
 	id = COX.40
 	title = COX.40.t
@@ -1554,9 +1351,8 @@ country_event = {
 	}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.41	#削减地租以打击世俗地主
+	id = COX.41 #削减地租以打击世俗地主
 	title = COX.41.t
 	desc = COX.41.d
 	picture = GFX_Report_Of_The_Third_Investigation_Group_In_Southern_Xinjiang
@@ -1565,8 +1361,7 @@ country_event = {
 		name = COX.41.a
 		country_event = {
 			id = COX.52
-			days = 14
-			random = 12
+			days = 14 random = 12
 		}
 	}
 	#option = {
@@ -1579,9 +1374,8 @@ country_event = {
 	#}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.42	#削减宗教税租以打击宗教地主
+	id = COX.42 #削减宗教税租以打击宗教地主
 	title = COX.42.t
 	desc = COX.42.d
 	picture = GFX_Stubborn
@@ -1590,8 +1384,7 @@ country_event = {
 		name = COX.42.a
 		country_event = {
 			id = COX.55
-			days = 14
-			random = 12
+			days = 14 random = 12
 		}
 	}
 	#option = {
@@ -1605,9 +1398,8 @@ country_event = {
 	#}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.43	#彻查私刑
+	id = COX.43 #彻查私刑
 	title = COX.43.t
 	desc = COX.43.d
 	picture = GFX_Crime_And_Punishment
@@ -1616,8 +1408,7 @@ country_event = {
 		name = COX.43.a
 		country_event = {
 			id = COX.58
-			days = 14
-			random = 12
+			days = 14 random = 12
 		}
 	}
 	#option = {
@@ -1630,9 +1421,8 @@ country_event = {
 	#}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.44	#揭露利益关系
+	id = COX.44 #揭露利益关系
 	title = COX.44.t
 	desc = COX.44.d
 	picture = GFX_A_Letter
@@ -1641,8 +1431,7 @@ country_event = {
 		name = COX.44.a
 		country_event = {
 			id = COX.56
-			days = 14
-			random = 12
+			days = 14 random = 12
 		}
 	}
 	#option = {
@@ -1656,9 +1445,8 @@ country_event = {
 	#}
 	fire_only_once = yes
 }
-
 country_event = {
-	id = COX.45	#废除人身依附
+	id = COX.45 #废除人身依附
 	title = COX.45.t
 	desc = COX.45.d
 	picture = GFX_Liberate
@@ -1668,8 +1456,7 @@ country_event = {
 		name = COX.45.a
 		country_event = {
 			id = COX.59
-			days = 14
-			random = 12
+			days = 14 random = 12
 		}
 	}
 	#option = {
@@ -1682,9 +1469,8 @@ country_event = {
 	#	}
 	#}
 }
-
 country_event = {
-	id = COX.46	#争取进步阿訇
+	id = COX.46 #争取进步阿訇
 	title = COX.46.t
 	desc = COX.46.d
 	picture = GFX_Cold_Shoulder
@@ -1692,11 +1478,7 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.46.a
-		country_event = {
-			id = COX.61
-			days = 14
-			random = 12
-		}
+		country_event = { id = COX.61 days = 14 random = 12 }
 	}
 	#option = {
 	#	name = COX.46.b
@@ -1712,9 +1494,8 @@ country_event = {
 	#	}
 	#}
 }
-
 country_event = {
-	id = COX.47	#没收土地
+	id = COX.47 #没收土地
 	title = COX.47.t
 	desc = COX.47.d
 	picture = GFX_Memory
@@ -1732,10 +1513,10 @@ country_event = {
 	#		value = 1
 	#	}
 	#}
+	
 }
-
 country_event = {
-	id = COX.48	#公有化宗教土地
+	id = COX.48 #公有化宗教土地
 	title = COX.48.t
 	desc = COX.48.d
 	picture = GFX_Collapse_And_Disappear
@@ -1756,7 +1537,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.49	#组建农会
+	id = COX.49 #组建农会
 	title = COX.49.t
 	desc = COX.49.d
 	picture = GFX_Walk_Alone
@@ -1764,9 +1545,7 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.49.a
-		country_event = {
-			id = COX.63
-		}
+		country_event = { id = COX.63 }
 	}
 	#option = {
 	#	name = COX.49.b
@@ -1780,7 +1559,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.50	#宗教事务局
+	id = COX.50 #宗教事务局
 	title = COX.50.t
 	desc = COX.50.d
 	picture = GFX_report_event_chinese_army_training
@@ -1801,7 +1580,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.51	#劳动改造
+	id = COX.51 #劳动改造
 	title = COX.51.t
 	desc = COX.51.d
 	picture = GFX_Allah_Bless
@@ -1822,7 +1601,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.52	#世俗减租后续1
+	id = COX.52 #世俗减租后续1
 	title = COX.52.t
 	desc = COX.52.d
 	picture = GFX_Reduction
@@ -1831,15 +1610,13 @@ country_event = {
 	option = {
 		name = COX.52.a
 		COX = {
-			country_event = {
-				id = COX.53
-			}
+			country_event = { id = COX.53 }
 		}
 	}
 }
 
 country_event = {
-	id = COX.53	#世俗减租后续2
+	id = COX.53 #世俗减租后续2
 	title = COX.53.t
 	desc = COX.53.d
 	picture = GFX_Reduction
@@ -1848,15 +1625,13 @@ country_event = {
 	option = {
 		name = COX.53.a
 		COX = {
-			country_event = {
-				id = COX.54
-			}
+			country_event = { id = COX.54 }
 		}
 	}
 }
 
 country_event = {
-	id = COX.54	#世俗减租后续3
+	id = COX.54 #世俗减租后续3
 	title = COX.54.t
 	desc = COX.54.d
 	picture = GFX_Reduction
@@ -1868,7 +1643,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.55	#宗教减租后续
+	id = COX.55 #宗教减租后续
 	title = COX.55.t
 	desc = COX.55.d
 	picture = GFX_A_New_Day_At_A_Ravioli_Stall
@@ -1880,7 +1655,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.56	#揭露关系后续1
+	id = COX.56 #揭露关系后续1
 	title = COX.56.t
 	desc = COX.56.d
 	picture = GFX_Unrighteous_Marriage_First_Part
@@ -1888,16 +1663,12 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.56.a
-		country_event = {
-			id = COX.57
-			days = 1
-			random = 12
-		}
+		country_event = { id = COX.57 days = 1 random = 12 }
 	}
 }
 
 country_event = {
-	id = COX.57	#揭露关系后续2
+	id = COX.57 #揭露关系后续2
 	title = COX.57.t
 	desc = COX.57.d
 	picture = GFX_Unrighteous_Marriage_Second_Part
@@ -1909,7 +1680,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.58	#彻查私刑后续
+	id = COX.58 #彻查私刑后续
 	title = COX.58.t
 	desc = COX.58.d
 	picture = GFX_report_event_chinese_army_training
@@ -1921,7 +1692,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.59	#废除人身依附后续1
+	id = COX.59 #废除人身依附后续1
 	title = COX.59.t
 	desc = COX.59.d
 	picture = GFX_report_event_chinese_army_training
@@ -1929,14 +1700,12 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.59.a
-		country_event = {
-			id = COX.60
-		}
+		country_event = { id = COX.60 }
 	}
 }
 
 country_event = {
-	id = COX.60	#废除人身依附后续2
+	id = COX.60 #废除人身依附后续2
 	title = COX.60.t
 	desc = COX.60.d
 	picture = GFX_report_event_chinese_army_training
@@ -1948,7 +1717,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.61	#争取贫困阿訇后续
+	id = COX.61 #争取贫困阿訇后续
 	title = COX.61.t
 	desc = COX.61.d
 	picture = GFX_report_event_chinese_army_training
@@ -1960,7 +1729,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.62	#争取贫困阿訇后续
+	id = COX.62 #争取贫困阿訇后续
 	title = COX.62.t
 	desc = COX.62.d
 	picture = GFX_report_event_chinese_army_training
@@ -1972,7 +1741,7 @@ country_event = {
 }
 
 country_event = {
-	id = COX.63	#组织农会
+	id = COX.63 #组织农会
 	title = COX.63.t
 	desc = COX.63.d
 	picture = GFX_Walk_Alone_Second_Part
@@ -1989,11 +1758,7 @@ country_event = {
 			var = imam_support
 			value = 5
 		}
-		country_event = {
-			id = COX.62
-			days = 10
-			random = 12
-		}
+		country_event = { id = COX.62 days = 10 random = 12 }
 	}
 	#option = {
 	#	name = COX.63.b
@@ -2076,9 +1841,7 @@ country_event = {
 	#	name = COX.69.b
 	#}
 }
-
-country_event = {
-	#举步维艰
+country_event = { #举步维艰
 	id = COX.70
 	title = COX.70.t
 	desc = COX.70.d
@@ -2090,9 +1853,7 @@ country_event = {
 		add_manpower = -1
 	}
 }
-
-country_event = {
-	#下乡：阶级
+country_event = { #下乡：阶级
 	id = COX.71
 	title = COX.71.t
 	desc = COX.71.d
@@ -2103,9 +1864,7 @@ country_event = {
 		name = COX.71.a
 	}
 }
-
-country_event = {
-	#下乡：宗教
+country_event = { #下乡：宗教
 	id = COX.72
 	title = COX.72.t
 	desc = COX.72.d
@@ -2116,9 +1875,7 @@ country_event = {
 		name = COX.72.a
 	}
 }
-
-country_event = {
-	#同新盟会晤
+country_event = { #同新盟会晤
 	id = COX.73
 	title = COX.73.t
 	desc = COX.73.d
@@ -2129,9 +1886,7 @@ country_event = {
 		name = COX.73.a
 	}
 }
-
-country_event = {
-	#宗教的红线
+country_event = { #宗教的红线
 	id = COX.74
 	title = COX.74.t
 	desc = COX.74.d
@@ -2142,9 +1897,7 @@ country_event = {
 		name = COX.74.a
 	}
 }
-
-country_event = {
-	#新党员
+country_event = { #新党员
 	id = COX.75
 	title = COX.75.t
 	desc = COX.75.d
@@ -2155,9 +1908,7 @@ country_event = {
 		name = COX.75.a
 	}
 }
-
-country_event = {
-	#同心同德
+country_event = { #同心同德
 	id = COX.76
 	title = COX.76.t
 	desc = COX.76.d
@@ -2168,8 +1919,7 @@ country_event = {
 		name = COX.76.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.77
 	title = COX.77.t
 	desc = COX.77.d
@@ -2179,15 +1929,11 @@ country_event = {
 	option = {
 		name = COX.77.a
 		hidden_effect = {
-			country_event = {
-				id = COX.78
-				days = 1
-			}
+			country_event = { id = COX.78 days = 1 }
 		}
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.78
 	title = COX.78.t
 	desc = COX.78.d
@@ -2198,8 +1944,7 @@ country_event = {
 		name = COX.78.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.79
 	title = COX.79.t
 	desc = COX.79.d
@@ -2210,8 +1955,7 @@ country_event = {
 		name = COX.79.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.80
 	title = COX.80.t
 	desc = COX.80.d
@@ -2222,8 +1966,7 @@ country_event = {
 		name = COX.80.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.81
 	title = COX.81.t
 	desc = COX.81.d
@@ -2233,15 +1976,11 @@ country_event = {
 	option = {
 		name = COX.81.a
 		hidden_effect = {
-			country_event = {
-				id = COX.82
-				days = 5
-			}
+			country_event = { id = COX.82 days = 5 }
 		}
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.82
 	title = COX.82.t
 	desc = COX.82.d
@@ -2252,8 +1991,7 @@ country_event = {
 		name = COX.82.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.83
 	title = COX.83.t
 	desc = COX.83.d
@@ -2264,8 +2002,7 @@ country_event = {
 		name = COX.83.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.84
 	title = COX.84.t
 	desc = COX.84.d
@@ -2276,8 +2013,7 @@ country_event = {
 		name = COX.84.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.85
 	title = COX.85.t
 	desc = COX.85.d
@@ -2288,8 +2024,7 @@ country_event = {
 		name = COX.85.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.86
 	title = COX.86.t
 	desc = COX.86.d
@@ -2301,8 +2036,7 @@ country_event = {
 		add_manpower = 5
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.90
 	title = COX.90.t
 	desc = COX.90.d
@@ -2313,8 +2047,7 @@ country_event = {
 		name = COX.90.a
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.91
 	title = COX.91.t
 	desc = COX.91.d
@@ -2327,8 +2060,7 @@ country_event = {
 		set_country_flag = COX_jiaoyu_tree
 	}
 }
-
-country_event = {
+country_event = { 
 	id = COX.92
 	title = COX.92.t
 	desc = COX.92.d
@@ -2341,9 +2073,8 @@ country_event = {
 		TNO_improve_gender_rights_policy_effectiveness_high = yes
 	}
 }
-
-country_event = {
-	id = COX.93	#
+country_event = { 
+	id = COX.93 #
 	title = COX.93.t
 	desc = COX.93.d
 	picture = GFX_Cold_Shoulder
@@ -2353,9 +2084,8 @@ country_event = {
 		name = COX.93.a
 	}
 }
-
-country_event = {
-	id = COX.94	#
+country_event = { 
+	id = COX.94 #
 	title = COX.94.t
 	desc = COX.94.d
 	picture = GFX_Cold_Shoulder
@@ -2365,9 +2095,8 @@ country_event = {
 		name = COX.93.a
 	}
 }
-
-country_event = {
-	id = COX.95	#
+country_event = { 
+	id = COX.95 #
 	title = COX.95.t
 	desc = COX.95.d
 	picture = GFX_Cold_Shoulder
@@ -2375,16 +2104,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.95.a
-		country_event = {
-			id = COX.96
-			days = 1
-			random = 12
-		}
+		country_event = { id = COX.96 days = 1 random = 12 }
 	}
 }
-
-country_event = {
-	id = COX.96	#
+country_event = { 
+	id = COX.96 #
 	title = COX.96.t
 	desc = COX.96.d
 	picture = GFX_Cold_Shoulder
@@ -2394,9 +2118,8 @@ country_event = {
 		name = COX.96.a
 	}
 }
-
-country_event = {
-	id = COX.97	#
+country_event = { 
+	id = COX.97 #
 	title = COX.97.t
 	desc = COX.97.d
 	picture = GFX_Cold_Shoulder
@@ -2407,9 +2130,8 @@ country_event = {
 		add_manpower = 6
 	}
 }
-
-country_event = {
-	id = COX.98	#
+country_event = { 
+	id = COX.98 #
 	title = COX.98.t
 	desc = COX.98.d
 	picture = GFX_Cold_Shoulder
@@ -2419,17 +2141,13 @@ country_event = {
 		name = COX.98.a
 		hidden_effect = {
 			hidden_effect = {
-				load_focus_tree = {
-					tree = COX_Qinghai_emergency
-					keep_completed = no
-				}
+				load_focus_tree = { tree = COX_Qinghai_emergency keep_completed = no }
 			}
 		}
 	}
 }
-
-country_event = {
-	id = COX.99	#
+country_event = { 
+	id = COX.99 #
 	title = COX.99.t
 	desc = COX.99.d
 	picture = GFX_Cold_Shoulder
@@ -2437,11 +2155,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.99.a
+
 	}
 }
-
-country_event = {
-	id = COX.100	#逃亡
+country_event = { 
+	id = COX.100 #逃亡
 	title = COX.100.t
 	desc = COX.100.d
 	picture = GFX_Cold_Shoulder
@@ -2451,9 +2169,8 @@ country_event = {
 		name = COX.100.a
 	}
 }
-
-country_event = {
-	id = COX.101	#
+country_event = { 
+	id = COX.101 #
 	title = COX.101.t
 	desc = COX.101.d
 	picture = GFX_Cold_Shoulder
@@ -2463,9 +2180,8 @@ country_event = {
 		name = COX.101.a
 	}
 }
-
-country_event = {
-	id = COX.102	#
+country_event = { 
+	id = COX.102 #
 	title = COX.102.t
 	desc = COX.102.d
 	picture = GFX_Cold_Shoulder
@@ -2475,9 +2191,8 @@ country_event = {
 		name = COX.102.a
 	}
 }
-
-country_event = {
-	id = COX.103	#邻家起火
+country_event = { 
+	id = COX.103 #邻家起火
 	title = COX.103.t
 	desc = COX.103.d
 	picture = GFX_COX_Ling_family
@@ -2489,9 +2204,8 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 }
-
-country_event = {
-	id = COX.104	#渗透
+country_event = { 
+	id = COX.104 #渗透
 	title = COX.104.t
 	desc = COX.104.d
 	picture = GFX_Cold_Shoulder
@@ -2501,9 +2215,8 @@ country_event = {
 		name = COX.104.a
 	}
 }
-
-country_event = {
-	id = COX.105	#
+country_event = { 
+	id = COX.105 #
 	title = COX.105.t
 	desc = COX.105.d
 	picture = GFX_Cold_Shoulder
@@ -2515,9 +2228,8 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 }
-
-country_event = {
-	id = COX.106	#
+country_event = { 
+	id = COX.106 #
 	title = COX.106.t
 	desc = COX.106.d
 	picture = GFX_Cold_Shoulder
@@ -2525,15 +2237,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.106.a
-		country_event = {
-			id = COX.107
-			days = 1
-		}
+		country_event = { id = COX.107 days = 1 }
 	}
 }
-
-country_event = {
-	id = COX.107	#
+country_event = { 
+	id = COX.107 #
 	title = COX.107.t
 	desc = COX.107.d
 	picture = GFX_Cold_Shoulder
@@ -2543,9 +2251,8 @@ country_event = {
 		name = COX.107.a
 	}
 }
-
-country_event = {
-	id = COX.108	#
+country_event = { 
+	id = COX.108 #
 	title = COX.108.t
 	desc = COX.108.d
 	picture = GFX_Cold_Shoulder
@@ -2555,9 +2262,8 @@ country_event = {
 		name = COX.108.a
 	}
 }
-
-country_event = {
-	id = COX.109	#
+country_event = { 
+	id = COX.109 #
 	title = COX.109.t
 	desc = COX.109.d
 	picture = GFX_Cold_Shoulder
@@ -2567,9 +2273,8 @@ country_event = {
 		name = COX.109.a
 	}
 }
-
-country_event = {
-	id = COX.110	#
+country_event = { 
+	id = COX.110 #
 	title = COX.110.t
 	desc = COX.110.d
 	picture = GFX_Cold_Shoulder
@@ -2579,9 +2284,8 @@ country_event = {
 		name = COX.110.a
 	}
 }
-
-country_event = {
-	id = COX.111	#
+country_event = { 
+	id = COX.111 #
 	title = COX.111.t
 	desc = COX.111.d
 	picture = GFX_Cold_Shoulder
@@ -2589,16 +2293,11 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.111.a
-		country_event = {
-			id = COX.113
-			days = 3
-			random = 12
-		}
+			country_event = { id = COX.113 days = 3 random = 12 }
 	}
 }
-
-country_event = {
-	id = COX.112	#
+country_event = { 
+	id = COX.112 #
 	title = COX.112.t
 	desc = COX.112.d
 	picture = GFX_Cold_Shoulder
@@ -2608,9 +2307,8 @@ country_event = {
 		name = COX.112.a
 	}
 }
-
-country_event = {
-	id = COX.113	#
+country_event = { 
+	id = COX.113 #
 	title = COX.113.t
 	desc = COX.113.d
 	picture = GFX_Cold_Shoulder
@@ -2620,9 +2318,8 @@ country_event = {
 		name = COX.113.a
 	}
 }
-
-country_event = {
-	id = COX.114	#第二次
+country_event = { 
+	id = COX.114 #第二次
 	title = COX.114.t
 	desc = COX.114.d
 	picture = GFX_Cold_Shoulder
@@ -2632,9 +2329,8 @@ country_event = {
 		name = COX.114.a
 	}
 }
-
-country_event = {
-	id = COX.115	#
+country_event = { 
+	id = COX.115 #
 	title = COX.115.t
 	desc = COX.115.d
 	picture = GFX_Cold_Shoulder
@@ -2644,9 +2340,8 @@ country_event = {
 		name = COX.115.a
 	}
 }
-
-country_event = {
-	id = COX.116	#
+country_event = { 
+	id = COX.116 #
 	title = COX.116.t
 	desc = COX.116.d
 	picture = GFX_Cold_Shoulder
@@ -2656,9 +2351,8 @@ country_event = {
 		name = COX.116.a
 	}
 }
-
-country_event = {
-	id = COX.117	#
+country_event = { 
+	id = COX.117 #
 	title = COX.117.t
 	desc = COX.117.d
 	picture = GFX_Cold_Shoulder
@@ -2668,9 +2362,8 @@ country_event = {
 		name = COX.117.a
 	}
 }
-
-country_event = {
-	id = COX.118	#
+country_event = { 
+	id = COX.118 #
 	title = COX.118.t
 	desc = COX.118.d
 	picture = GFX_Cold_Shoulder
@@ -2680,9 +2373,8 @@ country_event = {
 		name = COX.118.a
 	}
 }
-
-country_event = {
-	id = COX.119	#
+country_event = { 
+	id = COX.119 #
 	title = COX.119.t
 	desc = COX.119.d
 	picture = GFX_Cold_Shoulder
@@ -2692,9 +2384,8 @@ country_event = {
 		name = COX.119.a
 	}
 }
-
-country_event = {
-	id = COX.120	#
+country_event = { 
+	id = COX.120 #
 	title = COX.120.t
 	desc = COX.120.d
 	picture = GFX_Cold_Shoulder
@@ -2704,9 +2395,8 @@ country_event = {
 		name = COX.120.a
 	}
 }
-
-country_event = {
-	id = COX.121	#
+country_event = { 
+	id = COX.121 #
 	title = COX.121.t
 	desc = COX.121.d
 	picture = GFX_Cold_Shoulder
@@ -2716,9 +2406,8 @@ country_event = {
 		name = COX.121.a
 	}
 }
-
-country_event = {
-	id = COX.122	#
+country_event = { 
+	id = COX.122 #
 	title = COX.122.t
 	desc = COX.122.d
 	picture = GFX_Cold_Shoulder
@@ -2728,9 +2417,8 @@ country_event = {
 		name = COX.122.a
 	}
 }
-
-country_event = {
-	id = COX.123	#
+country_event = { 
+	id = COX.123 #
 	title = COX.123.t
 	desc = COX.123.d
 	picture = GFX_COX_darts
@@ -2740,9 +2428,8 @@ country_event = {
 		name = COX.123.a
 	}
 }
-
-country_event = {
-	id = COX.124	#
+country_event = { 
+	id = COX.124 #
 	title = COX.124.t
 	desc = COX.124.d
 	picture = GFX_Cold_Shoulder
@@ -2752,9 +2439,8 @@ country_event = {
 		name = COX.124.a
 	}
 }
-
-country_event = {
-	id = COX.125	#
+country_event = { 
+	id = COX.125 #
 	title = COX.125.t
 	desc = COX.125.d
 	picture = GFX_Cold_Shoulder
@@ -2764,9 +2450,8 @@ country_event = {
 		name = COX.125.a
 	}
 }
-
-country_event = {
-	id = COX.126	#
+country_event = { 
+	id = COX.126 #
 	title = COX.126.t
 	desc = COX.126.d
 	picture = GFX_Cold_Shoulder
@@ -2776,9 +2461,8 @@ country_event = {
 		name = COX.126.a
 	}
 }
-
-country_event = {
-	id = COX.127	#
+country_event = { 
+	id = COX.127 #
 	title = COX.127.t
 	desc = COX.127.d
 	picture = GFX_Cold_Shoulder
@@ -2788,9 +2472,8 @@ country_event = {
 		name = COX.127.a
 	}
 }
-
-country_event = {
-	id = COX.128	#
+country_event = { 
+	id = COX.128 #
 	title = COX.128.t
 	desc = COX.128.d
 	picture = GFX_Cold_Shoulder
@@ -2800,9 +2483,8 @@ country_event = {
 		name = COX.128.a
 	}
 }
-
-country_event = {
-	id = COX.129	#
+country_event = { 
+	id = COX.129 #
 	title = COX.129.t
 	desc = COX.129.d
 	picture = GFX_Cold_Shoulder
@@ -2812,9 +2494,8 @@ country_event = {
 		name = COX.129.a
 	}
 }
-
-country_event = {
-	id = COX.130	#
+country_event = { 
+	id = COX.130 #
 	title = COX.130.t
 	desc = COX.130.d
 	picture = GFX_Cold_Shoulder
@@ -2824,9 +2505,8 @@ country_event = {
 		name = COX.130.a
 	}
 }
-
-country_event = {
-	id = COX.131	#
+country_event = { 
+	id = COX.131 #
 	title = COX.131.t
 	desc = COX.131.d
 	picture = GFX_Cold_Shoulder
@@ -2836,9 +2516,8 @@ country_event = {
 		name = COX.131.a
 	}
 }
-
-country_event = {
-	id = COX.132	#
+country_event = { 
+	id = COX.132 #
 	title = COX.132.t
 	desc = COX.132.d
 	picture = GFX_COX_darts
@@ -2848,9 +2527,8 @@ country_event = {
 		name = COX.132.a
 	}
 }
-
-country_event = {
-	id = COX.133	#良机难觅
+country_event = { 
+	id = COX.133 #良机难觅
 	title = COX.133.t
 	desc = COX.133.d
 	picture = GFX_Hard_To_Find_Chance
@@ -2860,15 +2538,14 @@ country_event = {
 		name = COX.133.a
 		hidden_effect = {
 			country_event = {
-				id = COX.134
+				id= COX.134
 				days = 1
 			}
 		}
 	}
 }
-
-country_event = {
-	id = COX.134	#且听风吟
+country_event = { 
+	id = COX.134 #且听风吟
 	title = COX.134.t
 	desc = COX.134.d
 	picture = GFX_Just_Listen_To_Wind
@@ -2878,9 +2555,8 @@ country_event = {
 		name = COX.134.a
 	}
 }
-
-country_event = {
-	id = COX.135
+country_event = { 
+	id = COX.135 
 	title = COX.135.t
 	desc = COX.135.d
 	picture = GFX_Just_Listen_To_Wind
@@ -2892,9 +2568,8 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 }
-
 country_event = {
-	id = COX.136	#紧急会议
+	id = COX.136 #紧急会议
 	title = COX.136.t
 	desc = COX.136.d
 	picture = GFX_Just_Listen_To_Wind
@@ -2910,12 +2585,11 @@ country_event = {
 			}
 			XBJ = {
 				transfer_state = 1597
-				add_state_core = 1597
 			}
-			#XPC = {          #注意，此效果为测试伊犁军区临时效果
-			#	transfer_state = 2026
-			#add_state_core = 2026
-			#}
+			 #XPC = {          #注意，此效果为测试伊犁军区临时效果
+			 #	transfer_state = 2026
+			 #add_state_core = 2026
+			 #}
 			1597 = {
 				add_resource = {
 					type = steel
@@ -2930,36 +2604,21 @@ country_event = {
 				}
 			}
 			XBJ = {
-				set_variable = {
-					GDP_growth = XIN.GDP_growth
-				}
-				set_variable = {
-					income_tax_rate = 0.11
-				}
-				set_variable = {
-					business_tax_rate = 0.11
-				}
-				set_variable = {
-					poverty_rate = 90
-				}
-				set_variable = {
-					poverty_monthly_change = 0.08
-				}
-				set_variable = {
-					base_inflation_rate = 1.25
-				}
-				set_temp_variable = {
-					temp_credit_rating = 10
-				}
-				set_temp_variable = {
-					temp_credit_rating_min = 10
-				}
-				set_temp_variable = {
-					temp_credit_rating_max = 10
-				}
+				set_variable = { GDP_growth = XIN.GDP_growth }
+				set_variable = { income_tax_rate = 0.11 }
+				set_variable = { business_tax_rate = 0.11 }
+				set_variable = { poverty_rate = 90 }
+				set_variable = { poverty_monthly_change = 0.08 }
+				set_variable = { base_inflation_rate = 1.25 }
+				
+				set_temp_variable = { temp_credit_rating = 10 }
+				set_temp_variable = { temp_credit_rating_min = 10 }
+				set_temp_variable = { temp_credit_rating_max = 10 }
 				econ_initialize_credit_rating_system = yes
+				
 				TNO_startup_nation = yes
 				initiate_display_vars = yes
+				
 				calculate_base_trade_influence = yes
 			}
 		}
@@ -2984,9 +2643,8 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
-	id = COX.178	#新疆工业状况
+	id = COX.178 #新疆工业状况
 	title = COX.178.t
 	desc = COX.178.d
 	picture = GFX_report_event_chinese_army_training
@@ -2995,9 +2653,8 @@ country_event = {
 		name = COX.178.a
 	}
 }
-
 country_event = {
-	id = COX.168	#点灯
+	id = COX.168 #点灯
 	title = COX.168.t
 	desc = COX.168.d
 	picture = GFX_report_event_chinese_army_training
@@ -3007,11 +2664,10 @@ country_event = {
 		COX = {
 			country_event = COX.167
 		}
-	}
+	}	
 }
-
 country_event = {
-	id = COX.167	#报纸
+	id = COX.167 #报纸
 	title = COX.167.t
 	desc = COX.167.d
 	picture = GFX_report_event_chinese_army_training
@@ -3021,21 +2677,21 @@ country_event = {
 		COX = {
 			country_event = COX.166
 		}
-	}
+	}	
 }
-
 country_event = {
-	id = COX.166	#登报
+	id = COX.166 #登报
 	title = COX.166.t
 	desc = COX.166.d
 	picture = GFX_report_event_chinese_army_training
 	is_triggered_only = yes
 	option = {
 		name = COX.166.a
-	}
+	}	
 }
 
 add_namespace = COX_landreform
+
 country_event = {
 	id = COX_landreform.1
 	title = COX_landreform.1.t
@@ -3047,18 +2703,15 @@ country_event = {
 		custom_effect_tooltip = COX_event_landreform_1_tt
 		set_country_flag = COX_land_reform_succeeded
 		hidden_effect = {
-			remove_dynamic_modifier = {
-				modifier = COX_fs_modifier
-			}
-			add_dynamic_modifier = {
-				modifier = COX_landform_ended_modifier
-			}
+			remove_dynamic_modifier = { modifier = COX_fs_modifier }
+			add_dynamic_modifier = { modifier = COX_landform_ended_modifier }
 		}
-	}
+	}	
 }
 
+
 country_event = {
-	id = COX.201
+	id = COX.201 
 	title = COX.201.t
 	desc = COX.201.d
 	picture = GFX_Cold_Shoulder
@@ -3092,7 +2745,6 @@ country_event = {
 		name = COX.203.a
 	}
 }
-
 country_event = {
 	id = COX.204
 	title = COX.204.t
@@ -3106,9 +2758,8 @@ country_event = {
 			original_tag = COX
 		}
 		hidden_effect = {
-			set_cosmetic_tag = COX_XBJ
-			load_focus_tree = Long_Yun_take_over_Nanjing
-			set_global_flag = COX_Occupy_Nanjing
+                                   set_cosmetic_tag = COX_XBJ
+		load_focus_tree = Long_Yun_take_over_Nanjing
 		}
 	}
 	option = {
@@ -3117,25 +2768,23 @@ country_event = {
 			original_tag = XBJ
 		}
 		hidden_effect = {
-			COX = {
-				change_tag_from = ROOT
-			}
+			COX = { change_tag_from = ROOT }
 			COX = {
 				annex_country = {
 					target = XBJ
 					transfer_troops = yes
 				}
 			}
-			every_state = {
-				limit = {
-					is_core_of = XBJ
-				}
-				add_core_of = COX
-			}
+					every_state = {
+						limit = {
+							is_core_of =XBJ
+						}
+						add_core_of = COX
+					}
 		}
+
 	}
 }
-
 country_event = {
 	id = COX.205
 	title = COX.205.t
@@ -3147,7 +2796,6 @@ country_event = {
 		name = COX.205.a
 	}
 }
-
 country_event = {
 	id = COX.206
 	title = COX.206.t
@@ -3163,6 +2811,7 @@ country_event = {
 				transfer_troops = no
 			}
 			log = "[GetDateText]: COX: [From.GetName] GAN: [Root.GetName] on_capitulation"
+
 			set_global_flag = show_peace_popup_alert
 			COX = {
 				save_global_event_target_as = winning_country
@@ -3170,40 +2819,19 @@ country_event = {
 			GAN = {
 				save_global_event_target_as = losing_country
 			}
-			set_global_flag = losing_country_multiple
-			set_global_flag = winning_country_multiple
-			COX = {
-				# winner simply gets GDP recalculated :)
+				set_global_flag = losing_country_multiple
+				set_global_flag = winning_country_multiple
+			COX = { # winner simply gets GDP recalculated :)
 				recalculate_GDP_and_PUs_on_demand = yes
 			}
-			log = "war_won"
-			set_global_flag = war_won
-			add_to_variable = {
-				global.peace_popup_dirty = 1
-			}
+				log = "war_won"
+				set_global_flag = war_won
+			add_to_variable = { global.peace_popup_dirty = 1 }
+
 			log = "[GetDateText]: winner/loser: FROM: [winning_country.GetName] ROOT: [losing_country.GetName] on_capitulation"
-			set_country_flag = already_liberate_lanzhou
-			set_country_flag = COX_Liberation_of_Lanzhou
-			set_country_flag = COX_Liberate_Shaanxi_page1
-		}
-		country_event = {
-			id = COX.231
-			days = 10
-			random = 5
-		}
-		country_event = {
-			id = COX.232
-			days = 20
-			random = 5
-		}
-		country_event = {
-			id = COX.233
-			days = 3
-			random = 27
 		}
 	}
 }
-
 country_event = {
 	id = COX.207
 	title = COX.207.t
@@ -3212,36 +2840,8 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.207.a
-		hidden_effect = {
-			set_country_flag = COX_Liberation_of_Lanzhou
-			set_variable = {
-				Shaanxi_occupied_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_occupied_index
-				min = 0
-				max = 100
-			}
-			set_variable = {
-				Shaanxi_strength_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_strength_index
-				min = 0
-				max = 100
-			}
-			set_variable = {
-				Shaanxi_liberation_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_liberation_index
-				min = 0
-				max = 100
-			}
-		}
 	}
 }
-
 country_event = {
 	id = COX.208
 	title = COX.208.t
@@ -3252,44 +2852,17 @@ country_event = {
 	option = {
 		name = COX.208.a
 		custom_effect_tooltip = GAN_RUN_BAD
-		hidden_effect = {
-			NCC = {
-				load_oob = "NCC_GAN"
+			hidden_effect = {
+				NCC = {load_oob = "NCC_GAN"}
+					GAN = {
+						every_unit_leader = {
+						set_nationality = NCC
+					}
+					}
+
 			}
-			GAN = {
-				every_unit_leader = {
-					set_nationality = NCC
-				}
-			}
-			set_country_flag = COX_Liberation_of_Lanzhou
-			set_variable = {
-				Shaanxi_occupied_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_occupied_index
-				min = 0
-				max = 100
-			}
-			set_variable = {
-				Shaanxi_strength_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_strength_index
-				min = 0
-				max = 100
-			}
-			set_variable = {
-				Shaanxi_liberation_index = 0
-			}
-			clamp_variable = {
-				var = Shaanxi_liberation_index
-				min = 0
-				max = 100
-			}
-		}
 	}
 }
-
 country_event = {
 	id = COX.209
 	title = COX.209.t
@@ -3298,10 +2871,9 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.209.a
-		set_country_flag = first_per_mate
+			set_country_flag = first_per_mate
 	}
 }
-
 country_event = {
 	id = COX.210
 	title = COX.210.t
@@ -3310,10 +2882,9 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.210.a
-		set_country_flag = first_per_mate_2
+			set_country_flag = first_per_mate_2
 	}
 }
-
 country_event = {
 	id = COX.211
 	title = COX.211.t
@@ -3323,10 +2894,9 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = COX.211.a
-		set_country_flag = first_per_mate_3
+			set_country_flag = first_per_mate_3
 	}
 }
-
 country_event = {
 	id = COX.212
 	title = COX.212.t
@@ -3338,7 +2908,6 @@ country_event = {
 		name = COX.212.a
 	}
 }
-
 country_event = {
 	id = COX.213
 	title = COX.213.t
@@ -3349,7 +2918,6 @@ country_event = {
 		name = COX.213.a
 	}
 }
-
 country_event = {
 	id = COX.214
 	title = COX.214.t
@@ -3360,261 +2928,6 @@ country_event = {
 		name = COX.214.a
 	}
 }
-
-country_event = {
-	id = COX.215
-	title = COX.215.t
-	desc = COX.215.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.215.a
-	}
-}
-
-country_event = {
-	id = COX.216
-	title = COX.216.t
-	desc = COX.216.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.216.a
-	}
-}
-
-country_event = {
-	id = COX.217
-	title = COX.217.t
-	desc = COX.217.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.217.a
-	}
-}
-
-country_event = {
-	id = COX.218
-	title = COX.218.t
-	desc = COX.218.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.218.a
-	}
-}
-
-country_event = {
-	id = COX.219
-	title = COX.219.t
-	desc = COX.219.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.219.a
-	}
-}
-
-country_event = {
-	id = COX.220
-	title = COX.220.t
-	desc = COX.220.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.220.a
-		country_event = {
-			id = COX.221
-		}
-	}
-}
-
-country_event = {
-	id = COX.221
-	title = COX.221.t
-	desc = COX.221.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.221.a
-	}
-}
-
-country_event = {
-	id = COX.222
-	title = COX.222.t
-	desc = COX.222.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.222.a
-	}
-}
-
-country_event = {
-	id = COX.223
-	title = COX.223.t
-	desc = COX.223.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.223.a
-	}
-}
-
-country_event = {
-	id = COX.224
-	title = COX.224.t
-	desc = COX.224.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.224.a
-	}
-}
-
-country_event = {
-	id = COX.225
-	title = COX.225.t
-	desc = COX.225.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.225.a
-		country_event = {
-			id = COX.226
-		}
-	}
-}
-
-country_event = {
-	id = COX.226
-	title = COX.226.t
-	desc = COX.226.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.226.a
-		country_event = {
-			id = COX.227
-		}
-	}
-}
-
-country_event = {
-	id = COX.227
-	title = COX.227.t
-	desc = COX.227.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.227.a
-	}
-	option = {
-		name = COX.227.b
-	}
-}
-
-country_event = {
-	id = COX.228
-	title = COX.228.t
-	desc = COX.228.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.228.a
-	}
-}
-
-country_event = {
-	id = COX.229
-	title = COX.229.t
-	desc = COX.229.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.229.a
-	}
-}
-
-country_event = {
-	id = COX.230
-	title = COX.230.t
-	desc = COX.230.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.230.a
-	}
-}
-
-country_event = {
-	id = COX.231
-	title = COX.231.t
-	desc = COX.231.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.231.a
-	}
-}
-
-country_event = {
-	id = COX.232
-	title = COX.232.t
-	desc = COX.232.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.232.a
-	}
-}
-
-country_event = {
-	id = COX.233
-	title = COX.233.t
-	desc = COX.233.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.233.a
-	}
-}
-
-country_event = {
-	id = COX.234
-	title = COX.234.t
-	desc = COX.234.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.234.a
-	}
-}
-country_event = {
-	id = COX.235
-	title = COX.235.t
-	desc = COX.235.d
-	is_triggered_only = yes
-	picture = GFX_COX_MEA1
-	fire_only_once = yes
-	option = {
-		name = COX.235.a
-	}
-}
-country_event = {
-	id = COX.236
-	title = COX.236.t
-	desc = COX.236.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	picture = GFX_COX_MEA2
-	option = {
-		name = COX.236.a
-	}
-}
-
 country_event = {
 	id = COX.test_1
 	title = COX.test_1
@@ -3630,7 +2943,6 @@ country_event = {
 		add_ideas = Ma_Dunjing_sec
 	}
 }
-
 country_event = {
 	id = COX.999
 	title = COX.999.t
@@ -3654,7 +2966,6 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
 	id = COX.1000
 	title = COX.1000.t
@@ -3666,18 +2977,19 @@ country_event = {
 		tag = COX
 		has_war_with = JAP
 		COX = {
-			OR = {
-				controls_state = 1024
-				controls_state = 527
-				controls_state = 560
-				controls_state = 1018
-				controls_state = 962
-				controls_state = 525
-				controls_state = 655
-				controls_state = 963
-			}
+				OR = {
+					controls_state = 1024
+					controls_state = 527 
+					controls_state = 560 
+					controls_state = 1018 
+					controls_state = 962 
+					controls_state = 525 
+					controls_state = 655 
+					controls_state = 963 
+				}
 		}
 	}
+	
 	option = {
 		name = COX.1000.a
 		set_cosmetic_tag = COX_PRC
@@ -3685,46 +2997,46 @@ country_event = {
 			every_enemy_country = {
 				white_peace = COX
 			}
-			annex_country = {
-				target = MAN
-				transfer_troops = no
+			annex_country = { 
+				target = MAN 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = CHI
-				transfer_troops = no
+			annex_country = { 
+				target = CHI 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = SHX
-				transfer_troops = no
+			annex_country = { 
+				target = SHX 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = MAN
-				transfer_troops = no
+			annex_country = { 
+				target = MAN 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = YUN
-				transfer_troops = no
+			annex_country = { 
+				target = YUN 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = GUZ
-				transfer_troops = no
+			annex_country = { 
+				target = GUZ 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = GUX
-				transfer_troops = no
+			annex_country = { 
+				target = GUX 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = GNG
-				transfer_troops = no
+			annex_country = { 
+				target = GNG 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = HNA
-				transfer_troops = no
+			annex_country = { 
+				target = HNA 
+				transfer_troops = no 
 			}
-			annex_country = {
-				target = NCC
-				transfer_troops = no
-			}
+			annex_country = { 
+				target = NCC 
+				transfer_troops = no 
+			}				
 			every_country = {
 				news_event = {
 					id = COX_news_event.3
@@ -3736,24 +3048,21 @@ country_event = {
 			transfer_state = 812
 			#log = "[GetDateText]: COX: [From.GetName] JAP: [Root.GetName] on_capitulation"
 			set_global_flag = show_peace_popup_alert
-			COX = {
-				save_global_event_target_as = winning_country
+				COX = {
+					save_global_event_target_as = winning_country
+				}
+				JAP = {
+					save_global_event_target_as = losing_country
+				}
+					set_global_flag = losing_country_multiple
+					set_global_flag = winning_country_multiple
+				COX = { # winner simply gets GDP recalculated :
+					recalculate_GDP_and_PUs_on_demand = yes
+				}
+					log = "war_won"
+					set_global_flag = war_won
+				add_to_variable = { global.peace_popup_dirty = 1 }
 			}
-			JAP = {
-				save_global_event_target_as = losing_country
-			}
-			set_global_flag = losing_country_multiple
-			set_global_flag = winning_country_multiple
-			COX = {
-				# winner simply gets GDP recalculated :
-				recalculate_GDP_and_PUs_on_demand = yes
-			}
-			log = "war_won"
-			set_global_flag = war_won
-			add_to_variable = {
-				global.peace_popup_dirty = 1
-			}
-		}
 	}
 }
 
@@ -3777,10 +3086,9 @@ country_event = {
 		declare_war_on = {
 			target = SHX
 			type = annex_everything
-		}
+		}		
 	}
 }
-
 country_event = {
 	id = COX.114514
 	title = COX.114514.t
@@ -3794,7 +3102,6 @@ country_event = {
 		}
 	}
 }
-
 country_event = {
 	id = COX.999998
 	title = COX.999998.t
@@ -3806,7 +3113,6 @@ country_event = {
 		custom_effect_tooltip = Mao_comes_back
 	}
 }
-
 country_event = {
 	id = COX.999999
 	title = COX.999999.t

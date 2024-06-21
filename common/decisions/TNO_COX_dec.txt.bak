@@ -227,44 +227,6 @@ second_land_reform = {
 			}
 		}
 	}
-	local_unrest_ongoing_1964 = {
-		allowed = {
-			tag = COX
-		}
-		available = {
-			OR = {
-				1964 = {
-					has_state_flag = COX_dealing_with_local_unrest
-				}
-				hidden_trigger = {
-					NOT = {
-						has_country_flag = COX_land_reform_on_going
-					}
-				}
-			}
-		}
-		activation = {
-			1964 = {
-				check_variable = {
-					COX_landreform_local_unrest > 0
-				}
-			}
-			has_country_flag = COX_land_reform_on_going
-		}
-		is_good = no
-		selectable_mission = no
-		days_mission_timeout = 7
-		timeout_effect = {
-			1964 = {
-				COX_landreform_deal_with_unrest_failed_effect = yes
-			}
-		}
-		complete_effect = {
-			1964 = {
-				COX_landreform_deal_with_unrest_successfully_effect = yes
-			}
-		}
-	}
 
 	local_unrest_ongoing_2016 = {
 		allowed = {
@@ -741,28 +703,6 @@ second_land_reform = {
 			}
 		}
 	}
-	local_take_back_province_1964 = {
-		allowed = {
-			tag = COX
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			1964 = {
-				has_state_flag = COX_sec_Conduct_recapture_operations_active
-			}
-			has_country_flag = COX_land_reform_on_going
-		}
-		is_good = no
-		selectable_mission = no
-		days_mission_timeout = 30
-		timeout_effect = {
-			1964 = {
-				COX_landreform_take_back_province_effect = yes
-			}
-		}
-	}
 
 	local_take_back_province_2016 = {
 		allowed = {
@@ -1093,28 +1033,6 @@ second_land_reform = {
 		days_mission_timeout = 30
 		timeout_effect = {
 			1961 = {
-				COX_landreform_mil_back_to_centre_effect = yes
-			}
-		}
-	}
-	local_mil_back_to_centre_1964 = {
-		allowed = {
-			tag = COX
-		}
-		available = {
-			always = no
-		}
-		activation = {
-			1964 = {
-				has_state_flag = COX_sec_Combat_potential_hostile_cooldown
-			}
-			has_country_flag = COX_land_reform_on_going
-		}
-		is_good = no
-		selectable_mission = no
-		days_mission_timeout = 30
-		timeout_effect = {
-			1964 = {
 				COX_landreform_mil_back_to_centre_effect = yes
 			}
 		}

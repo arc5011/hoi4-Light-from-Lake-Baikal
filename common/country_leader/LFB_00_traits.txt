@@ -4,9 +4,7 @@ leader_traits = {
 		political_power_factor = 0.10
 		stability_factor = 0.05
 		war_support_factor = 0.05
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	XI_BEI_WANG = {
 		random = no
@@ -15,51 +13,39 @@ leader_traits = {
 	}
 	Crimson_Necromancer = {
 		random = no
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	centrally_planned_economy_people = {
 		random = no
 		political_power_factor = 0.05
 		industrial_capacity_factory = 0.05
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	proponents_of_planned_economy = {
 		random = no
 		production_speed_buildings_factor = 0.1
 		consumer_goods_use_modifier = -0.05
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	tactful_intelligence_worker = {
 		random = no
 		army_org_Factor = 0.05
 		decryption_factor = 0.05
 		encryption_factor = 0.05
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	purfent_diplomat = {
 		random = no
 		opinion_gain_monthly_same_ideology_factor = 1.0
 		political_power_factor = 0.05
-		ai_will_do = {
-			factor = 1
-		}
+		ai_will_do = { factor = 1 }
 	}
 	Widely_makes_friends = {
 		random = no
 		operation_infiltrate_outcome = 0.1
-		political_power_factor = 0.05
-		opinion_gain_monthly_same_ideology_factor = 0.1
-		ai_will_do = {
-			factor = 1
-		}
+		political_power_factor = 0.05 
+        opinion_gain_monthly_same_ideology_factor = 0.1
+		ai_will_do = { factor = 1 }
 	}
 	socialist_economy_with_Chinese_characteristics = {
 		random = no
@@ -124,48 +110,4 @@ leader_traits = {
 		stability_factor = 0.1
 		war_support_factor = 0.1
 	}
-	MEN_foreign_minister = {
-		random = no
-		trade_opinion_factor = 0.05
-	}
-	XIK_XIKANGWANG = {
-		random = no
-		political_power_gain = 0.05
-		stability_factor = 0.15
-	}
-	XIK_zzl = {
-		random = no
-		political_power_gain = -0.03
-		stability_factor = -0.02
-	}
-	XIK_ys = {
-		random = no
-		army_attack_factor = 0.05
-		stability_factor = -0.02
-		army_org_factor = -0.02
-	}
-	XIK_jbw = {
-		random = no
-		gdp_growth_modifier = -0.01
-		army_org_factor = -0.02
-	}
-	MEA_zedengbaer = {
-		random = no
-		supply_consumption_factor = -0.05
-		decryption_factor = 0.05
-	}
-	MEA_batedaoerji = {
-		random = no
-		war_support_factor = 0.05
-	}
-	MEA_zhamiyang = {
-		random = no
-		army_defence_factor = 0.05
-		max_dig_in = 0.5
-	}
-	MEA_gonggeer = {
-		random = no
-		cavalry_attack_factor = 0.05
-		cavalry_defence_factor = 0.05
-	}
-}
+}	

@@ -1,5 +1,4 @@
 add_namespace = GAN
-
 country_event = {
 	id = GAN.1
 	title = GAN.1.t
@@ -18,29 +17,60 @@ country_event = {
 		}
 		hidden_effect = {
 			#set_technology = { penal_infantry = 1 popup = no } #Note: Granting tech will make the penal battalion available for any template
-
 			division_template = {
 				name = "Shtrafnaya Chast"
 				division_names_group = GAN_PEN_01
 				is_locked = no
-
 				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 1 y = 0 }
-					infantry = { x = 1 y = 1 }
-					infantry = { x = 1 y = 2 }
-					infantry = { x = 2 y = 0 }
-					artillery_brigade = { x = 2 y = 1 }
-					artillery_brigade = { x = 2 y = 2 }
+					infantry = {
+						x = 0
+						y = 0
 					}
-					support = {
-						artillery = { x = 0 y = 0 }
+					infantry = {
+						x = 0
+						y = 1
 					}
-				}			
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+					infantry = {
+						x = 2
+						y = 0
+					}
+					artillery_brigade = {
+						x = 2
+						y = 1
+					}
+					artillery_brigade = {
+						x = 2
+						y = 2
+					}
+				}
+				support = {
+					artillery = {
+						x = 0
+						y = 0
+					}
+				}
 			}
-		GAN_spawn_penal_divisions_effect = yes		
+		}
+		GAN_spawn_penal_divisions_effect = yes
+		GAN = {
+			leave_faction = yes
+		}
 	}
 }
 

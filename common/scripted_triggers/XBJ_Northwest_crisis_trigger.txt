@@ -214,9 +214,11 @@ XBJ_Northwest_crisis_task_button_click_enabled_trigger = {
 		limit = { 
 			check_variable = { XBJ_northwest_crisis_this_state_task_id = 14 }
 		}
-		has_country_flag = XBJ_northwest_crisis_invaded_Jap_los
+		has_country_flag = XBJ_northwest_crisis_invaded_Jap_los		
 	}
 }
+
+#↑ 24.3.23 上方“渗透兰州”选项，已暂时删除西部暴动进行中的要求
 
 XBJ_Northwest_crisis_task_button_click_enabled_trigger_tt = {
 	if = {

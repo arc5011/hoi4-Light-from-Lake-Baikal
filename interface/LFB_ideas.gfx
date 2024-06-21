@@ -3,10 +3,6 @@ spriteTypes = {
 		name = "GFX_trait_Expedition"
 		texturefile = "gfx/interface/ideas/spirit/Long_March.png"
 	}
-	spriteType = {
-		name = "GFX_trait_Korean_Revolutionary"
-		texturefile = "gfx/interface/ideas/spirit/Korean_Revolutionary.png"
-	}
 	#XPC
 	spriteType = {
 		name = "GFX_idea_China_shengchanjianshebingtuan"
@@ -168,26 +164,7 @@ spriteTypes = {
 		name = "GFX_Construction_Corps_icon"
 		textureFile = "gfx/interface/autonomy/Construction_Corps_icon.dds"
 	}
-	spriteType = {
-		name = "GFX_idea_red_corridor"
-		texturefile = "gfx/interface/ideas/spirit/red_corridor.png"
-	}
-	spriteType = {
-		name = "GFX_idea_GAN_PERMATE_1"
-		texturefile = "gfx/interface/ideas/spirit/GAN_PERMATE_1.png"
-	}
-	spriteType = {
-		name = "GFX_idea_GAN_PERMATE_2"
-		texturefile = "gfx/interface/ideas/spirit/GAN_PERMATE_2.png"
-	}
-	spriteType = {
-		name = "GFX_idea_GAN_PERMATE_3"
-		texturefile = "gfx/interface/ideas/spirit/GAN_PERMATE_3.png"
-	}
-	spriteType = {
-		name = "GFX_idea_central_political_protection"
-		texturefile = "gfx/interface/ideas/spirit/central_political_protection.png"
-	}
+
 	#XBJ
 	spriteType = {
 		name = "GFX_idea_The_rest_of_Ningma"
@@ -244,27 +221,5 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_echo"
 		texturefile = "gfx/interface/ideas/events/echo.dds"
-	}
-	#MEN
-	spriteType = {
-		name = "GFX_idea_MEN_attack_idea_3"
-		texturefile = "gfx/interface/ideas/spirit/MEN_attack_idea_3.png"
-	}
-	spriteType = {
-		name = "GFX_idea_MEN_attack_idea_4"
-		texturefile = "gfx/interface/ideas/spirit/MEN_attack_idea_4.png"
-	}
-	#XIK
-	spriteType = {
-		name = "GFX_idea_XIK_The_Last_Anti_Japan_Army"
-		texturefile = "gfx/interface/ideas/spirit/XIk/XIK_The_Last_Anti_Japan_Army.png"
-	}
-	spriteType = {
-		name = "GFX_idea_XIK_Shadow_Of_Retreat"
-		texturefile = "gfx/interface/ideas/spirit/XIk/XIK_Shadow_Of_Retreat.png"
-	}
-	spriteType = {
-		name = "GFX_idea_XIK_Chap"
-		texturefile = "gfx/interface/ideas/spirit/XIk/XIK_Chap.png"
 	}
 }

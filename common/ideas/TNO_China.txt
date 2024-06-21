@@ -1082,6 +1082,7 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: added idea CHI_Western_Insurrection" }
 
 			modifier = {
+
 			}
 		}
 
