@@ -215,18 +215,6 @@ defined_text = {
 	}
 }
 defined_text = {
-	name = GetFlavor
-	text = {
-		trigger = {
-			event_target:losing_country = {
-				original_tag = SIK
-			}
-		}
-		localization_key = TNO_PEACE_POPUP_FLAVOR_SIK
-	}
-}
-
-defined_text = {
 	name = Get_COX_eid_gui_effect_text
 	text = {
 		trigger = {
@@ -257,6 +245,13 @@ defined_text = {
 			has_country_flag = COX_land_reform_succeeded
 		}
 		localization_key = COX_land_reform_succeeded_law
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			has_country_flag = COX_negotiation_end
+		}
+		localization_key = COX_interim_constiution_law
+	}
 	}
 }
 defined_text = {
@@ -275,5 +270,48 @@ defined_text = {
 			has_country_flag = COX_land_reform_succeeded
 		}
 		localization_key = COX_land_reform_succeeded_law_desc
+	}
+
+	text = {
+		trigger = {
+			check_variable = { v = 3 }
+			has_country_flag = COX_negotiation_end
+		}
+		localization_key = COX_interim_constiution_law_desc
+	}
+}
+
+
+defined_text = {
+	name = Get_LFB_NC_MEN_state
+	text = {
+		trigger = {
+			check_variable = {
+				LFB_NC_MEN_readiness < 7
+			} 
+		}
+		localization_key = LFB_NC_MEN_weak
+	}
+
+	text = {
+		trigger = {
+			check_variable = {
+				LFB_NC_MEN_readiness > 6.99
+			}
+			check_variable = {
+				LFB_NC_MEN_readiness < 11
+			}
+		}
+		localization_key = LFB_NC_MEN_mid
+	}
+
+	text = {
+		trigger = {
+			
+			check_variable = {
+				LFB_NC_MEN_readiness > 10.99
+			}
+		}
+		localization_key = LFB_NC_MEN_strong
 	}
 }

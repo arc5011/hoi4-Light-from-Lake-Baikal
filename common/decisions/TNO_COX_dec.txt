@@ -1378,6 +1378,7 @@ second_land_reform = {
 		fire_only_once = yes
 		complete_effect = {
 			set_country_flag = COX_land_reform_succeeded
+			clr_country_flag = country_has_gui
 			clr_country_flag = COX_land_refrom_on_going
 			add_state_core = 1964
 			add_state_core = 619
@@ -1562,7 +1563,7 @@ COX_coring_category = {
 			add_state_core = 619
 			add_state_core = 2024
 			add_state_core = 958
-			2017 = {
+			2023 = {
 				set_state_name = "和田"
 			}
 			set_province_name = {
@@ -1750,8 +1751,8 @@ COX_militia_reform = {
 			}
 		}
 		cost = 0
-		days_remove = 30
-		days_re_enable = 30
+		days_remove = 7
+		days_re_enable = 7
 		remove_effect = {
 			COX_chaotic_band_idea_change = yes
 		}
@@ -1972,7 +1973,7 @@ COX_early_industrial_development = {
 			COX_eid_COX_eid_machine_tool_change = yes
 		}
 	}
-	COX_Training_skilled_workers = {
+	COX_Training_skilled_workers = { 
 		visible = {
 			has_completed_focus = COX_Evaluate_Industry_Level
 			has_completed_focus = COX_Workers_Training_Agency
@@ -2021,6 +2022,7 @@ COX_early_industrial_development = {
 		complete_effect = {
 			add_to_variable = {
 				COX_eid_machine_tool = 15
+				COX_eid_gui_reflesh = yes
 			}
 		}
 	}
@@ -2046,637 +2048,7 @@ COX_early_industrial_development = {
 	}
 }
 
-COX_Liberation_of_Lanzhou = {
-	#渗透值衰减决议
-	COX_relation_army_old_ma = {#老马啊,老马,啊！！！
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-		}
-		available = {
-			has_political_power > 19
-		}
-		fire_only_once = yes
-		days_remove = 14
-		complete_effect = {
-			add_political_power = -20
-		}
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_infiltration_decay
-				value = -0.5
-			}
-			custom_effect_tooltip = COX_relation_army_old_ma_tt
-			COX = {
-				set_country_flag = complete_Contact_the_remnants_of_Ma
-			}
-			
-		}
-	}
-	COX_help_army_anti = {#援助游击队
-		visible = {
-			has_global_flag = FB_NC_stage_1 #兰州阶段
-			tag = COX
-			has_country_flag = complete_Contact_the_remnants_of_Ma
-		}
-		available = {
-			has_political_power > 20
-			has_equipment = {
-				infantry_equipment > 1000
-			}
-			has_equipment = {
-				anti_tank_equipment > 200
-			}
-		}
-		fire_only_once = yes
-		complete_effect = {
-			add_political_power = -20
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -1000
-			}
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment
-				amount = -200
-			}
-		}
-		days_remove = 14
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_infiltration_decay
-				value = -0.5
-			}
-			custom_effect_tooltip = COX_help_army_anti_tt
-			COX = {
-				set_country_flag = set_country_flag = complete_Aid_the_guerrillas
-			}
-		}
-	}
-	COX_Anti_sweep = {
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-			has_country_flag = complete_Aid_the_guerrillas
-		}
-		available = {
-			has_army_experience > 14
-		}
-		complete_effect = {
-			army_experience = -15
-		}
-		fire_only_once = yes
-		days_remove = 14
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_infiltration_decay
-				value = -0.5
-			}
-			custom_effect_tooltip = COX_Anti_sweep_tt
-		}
-	}
-	#通用渗透/整合决议
-	COX_SEE_army = {#侦察
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-		}
-		available = {
-			has_manpower > 149
-			
-			has_equipment = {
-				support_equipment > 49
-			}
-		}
-		complete_effect = {
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = -50
-			}
-			add_manpower = -150
-			set_country_flag = doing_Forward_reconnaissance
-		}
-		days_remove = 7
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_infiltration_index
-				value = 20
-			}
-			clamp_variable = {
-				var = Lanzhou_infiltration_index
-				min = 0
-				max = 100
-			}
-			add_manpower = 135
-			custom_effect_tooltip = COX_SEE_army_tt
-			clr_country_flag = doing_Forward_reconnaissance
-		}
-	}
-	COX_XIN_QIN_ROAD = {#新青公路
-		visible = {
-			OR = {
-				has_global_flag = LFB_NC_stage_1 #兰州阶段
-				has_country_flag = coring_Lanzhou
-			}
-			
-			tag = COX
-		}
-		available = {
-			has_political_power > 19
-			has_country_flag = coring_Lanzhou
-		}
-		complete_effect = {
-			add_political_power = -20
-		}
-		modifier = {
-			consumer_goods_factor = 0.05
-		}
-		fire_only_once = yes
-		days_remove = 35
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_integration_index
-				value = 20
-			}
-			957 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			2021 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			906 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			custom_effect_tooltip = COX_XIN_QIN_ROAD_tt
-			set_country_flag = complete_COX_XIN_QIN_ROAD
-		}
-	}
-	COX_XIN_QIN_RIL = {#新青铁路
-		visible = {
-			OR = {
-				has_global_flag = LFB_NC_stage_1 #兰州阶段
-				has_country_flag = coring_Lanzhou
-			}
-			tag = COX
-		}
-		available = {
-			has_political_power > 19
-			has_country_flag = coring_Lanzhou
-		}
-		complete_effect = {
-			add_political_power = -20
-		}
-		modifier = {
-			consumer_goods_factor = 0.05
-		}
-		fire_only_once = yes
-		days_remove = 35
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_integration_index
-				value = 20
-			}
-			build_railway = {
-				level = 2
-				fallback = yes
-				start_state = 617
-				target_state = 906
-			}
-			custom_effect_tooltip = COX_XIN_QIN_RIL_tt
-		}
-	}
-	#军队决议
-	COX_assassinate_officers = {#刺杀军官
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-		}
-		available = {
-			command_power > 49
-			has_manpower > 200
-			has_completed_focus = COX_The_Fighters
-			check_variable = {
-				Lanzhou_infiltration_index > 14
-			}
-		}
-		complete_effect = {
-			add_command_power = -50
-			add_manpower = -200
-			add_to_variable = {
-				var = Lanzhou_infiltration_index
-				value = -15
-			}
-			clamp_variable = {
-				var = Lanzhou_infiltration_index
-				min = 0
-				max = 100
-			}
-		}
-		fire_only_once = yes
-		days_remove = 14
-		remove_effect = {
-			add_manpower = 150
-			GAN = {
-				set_variable = { GAN_infiltrated_org_regen = -0.35 }
-			}
-			custom_effect_tooltip = COX_assassinate_officers_tt
-		}
-	}
-	COX_Reorganize_army = {#重组军队
-		visible = {
-			OR = {
-				has_global_flag = LFB_NC_stage_1 #兰州阶段
-				has_country_flag = coring_Lanzhou 
-			}
-			tag = COX
-		}
-		available = {
-			command_power > 19
-			has_country_flag = coring_Lanzhou
-			has_completed_focus = COX_The_Fighters
-		}
-		complete_effect = {
-			add_command_power = -20
-		}
-		fire_only_once = yes
-		days_remove = 14
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_integration_index
-				value = 10
-			}
-			clamp_variable = {
-				var = Lanzhou_integration_index
-				min = 0
-				max = 100
-			}
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 2500
-			}
-			add_equipment_to_stockpile = {
-				type = anti_tank_equipment
-				amount = 500
-			}
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = 100
-			}
-			custom_effect_tooltip = COX_Reorganize_army_tt
-		}
-	}
-	#农民决议
-	COX_mobilize_peasants = {#动员乡村群众
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-		}
-		available = {
-			check_variable = {
-				Lanzhou_infiltration_index > 4
-			}
-			has_political_power > 14
-			has_completed_focus = COX_The_Peasants
-		}
-		complete_effect = {
-			add_political_power = -15
-			add_to_variable = {
-				Lanzhou_infiltration_index = -5
-			}
-			clamp_variable = {
-				var = Lanzhou_infiltration_index
-				min = 0
-				max = 100
-			}
-		}
-		fire_only_once = yes
-		days_remove = 42
-		remove_effect = {
-			add_manpower = 5000
-			custom_effect_tooltip = COX_mobilize_peasants_tt
-		}
-	}
-	COX_Grassroots_autonomy = {#基层自治
-		visible = {
-			OR = {
-				has_global_flag = LFB_NC_stage_1 #兰州阶段
-				has_country_flag = coring_Lanzhou 
-			}
-			tag = COX
-		}
-		available = {
-			has_political_power > 99
-			has_completed_focus = COX_The_Peasants
-			has_country_flag = coring_Lanzhou 
-		}
-		complete_effect = {
-			add_political_power = -100
-		}
-		fire_only_once = yes
-		days_remove = 14
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_integration_index
-				value = 10
-			}
-			clamp_variable = {
-				var = Lanzhou_integration_index
-				min = 0
-				max = 100
-			}
-			add_stability = 0.1
-			custom_effect_tooltip = COX_Grassroots_autonomy_tt
-		}
-	}
-	#工人决议
-	COX_Hidden_factory = {#隐蔽工厂
-		visible = {
-			has_global_flag = LFB_NC_stage_1 #兰州阶段
-			tag = COX
-		}
-		available = {
-			check_variable = {
-				Lanzhou_infiltration_index > 9
-			}
-			has_political_power > 99
-			has_completed_focus = COX_The_Workers
-		}
-		complete_effect = {
-			add_political_power = -100
-			add_to_variable = {
-				Lanzhou_infiltration_index = -10
-			}
-			clamp_variable = {
-				var = Lanzhou_infiltration_index
-				min = 0
-				max = 100
-			}
-		}
-		fire_only_once = yes
-		days_remove = 42
-		remove_effect = {
-			add_ideas = COX_China_Hidden_factory
-			custom_effect_tooltip = COX_Hidden_factory_tt
-		}
-	}
-	COX_rebuild_Lanzhou_industry = {#重建兰州工业
-		visible = {
-			OR = {
-				has_global_flag = LFB_NC_stage_1 #兰州阶段
-				has_country_flag = coring_Lanzhou 
-			}
-			tag = COX
-		}
-		available = {
-			has_political_power > 99
-			has_completed_focus = COX_The_Workers
-			has_country_flag = coring_Lanzhou 
-		}
-		complete_effect = {
-			add_political_power = -100
-			set_temp_variable = { temp_econ_spending_amount = 0.3 }
-			econ_spend_money_once_effect_raw_money = yes
-		}
-		fire_only_once = yes
-		days_remove = 35
-		remove_effect = {
-			add_to_variable = {
-				var = Lanzhou_integration_index
-				value = 20
-			}
-			clamp_variable = {
-				var = Lanzhou_integration_index
-				min = 0
-				max = 100
-			}
-			add_stability = 0.1
-			custom_effect_tooltip = COX_rebuild_Lanzhou_industry_tt
-		}
-	}
-	#倒计时
-	COX_Liberation_of_Lanzhou_countdown = {
-		activation = {
-			has_global_flag = LFB_NC_stage_1
-			NOT = {
-				has_global_flag = COX_GAN_war
-			}
-		}
-		available = {
-			always = no
-		}
-		days_mission_timeout = 60
-		selectable_mission = no
-		timeout_effect = {
-			country_event = {
-				id = LFB_COX_nc.1
-			}
-		}
-		is_good = no
-	}
-	COX_Liberation_of_Lanzhou_invaded_Jap = {
-		activation = {
-			has_global_flag = COX_GAN_war
-		}
-		available = {
-			283 = {
-				is_controlled_by = COX
-			}
-		}
-		days_mission_timeout = 60
-		selectable_mission = no
-		complete_effect = {
-			country_event = {
-				id = LFB_COX_nc.2
-			}
-			hidden_effect = {
-				LFB_COX_GAN_war_win_effects = yes
-			}
-		}
-		timeout_effect = {
-			country_event = {
-				id = LFB_COX_nc.3
-			}
-			hidden_effect = {
-				LFB_COX_GAN_war_lose_effects = yes
-			}
-		}
-		is_good = no
 
-	}
-
-	#西北军补给相关
-	COX_GAN_lose_supply_countdown = {
-		activation = {
-			has_global_flag = LFB_NC_stage_1
-			check_variable = {
-				Lanzhou_infiltration_index > 60
-			}
-			NOT = {
-				GAN = {
-					has_country_flag = GAN_Supply_lines_broken
-				}
-			}
-		}
-		available = {
-			always = no
-		}
-		days_mission_timeout = 3
-		selectable_mission = no
-		timeout_effect = {
-			GAN = {
-				set_country_flag = GAN_Supply_lines_broken
-				remove_ideas = GAN_Supply_lines_across_East_Asia 
-				add_ideas = GAN_Supply_lines_broken
-			}
-		}
-	}
-
-	COX_GAN_gain_supply_countdown = {
-		activation = {
-			has_global_flag = LFB_NC_stage_1
-			check_variable = {
-				Lanzhou_infiltration_index < 50
-			}
-			GAN = {
-				has_country_flag = GAN_Supply_lines_broken
-			}
-		}
-		available = {
-			always = no
-		}
-		days_mission_timeout = 7
-		selectable_mission = no
-		timeout_effect = {
-			GAN = {
-				clr_country_flag = GAN_Supply_lines_broken
-				remove_ideas = GAN_Supply_lines_broken
-				add_ideas = GAN_Supply_lines_across_East_Asia
-			}
-		}
-	}
-}
-
-COX_Liberate_Shaanxi = {
-	COX_Shaanxi_runaway = {
-		activation = {
-			has_country_flag = COX_Liberation_of_Lanzhou
-		}
-		available = {
-			has_war = yes
-		}
-		selectable_mission = no
-		cancel_trigger = {
-			has_war = yes
-		}
-		days_mission_timeout = 240
-	}
-	COX_occupying_Shaanxi = {
-		activation = {
-			has_country_flag = COX_Liberation_of_Lanzhou
-		}
-		available = {
-			has_war = yes
-		}
-		selectable_mission = no
-		cancel_trigger = {
-			has_war = yes
-		}
-		days_mission_timeout = 7
-		timeout_effect = {
-			activate_mission = COX_occupying_Shaanxi
-			add_to_variable = {
-				var = Shaanxi_occupied_index
-				value = 1
-			}
-			set_variable = {
-				temp_Shaanxi_strength_index =Shaanxi_strength_index
-			}
-			divide_variable = {
-				temp_Shaanxi_strength_index = 10
-			}
-			add_to_variable = {
-				var = Shaanxi_occupied_index
-				value = temp_Shaanxi_strength_index
-			}
-			add_to_variable = {
-				var = Shaanxi_strength_index
-				value = -2
-			}
-			add_to_variable = {                #正确的计算不知为何不好实现，但这个近似是相当准确的
-				var = Shaanxi_liberation_index
-				value = 3
-			}
-			clamp_variable = {
-				var = Lanzhou_integration_index
-				min = 0
-				max = 100
-			}
-			clamp_variable = {
-				var = Shaanxi_strength_index
-				min = 0
-				max = 100
-			}
-			clamp_variable = {
-				var = Shaanxi_occupied_index
-				min = 0
-				max = 100
-			}
-			if = {
-				limit = {
-					check_variable = {
-						Shaanxi_occupied_index > 30
-					}
-				}
-				country_event = {
-					id = COX.228
-				}
-			}
-			else_if = {
-				limit = {
-					check_variable = {
-						Shaanxi_occupied_index > 60
-					}
-				}
-				country_event = {
-					id = COX.229
-				}
-			}
-			else_if = {
-				limit = {
-					check_variable = {
-						Shaanxi_occupied_index > 90
-					}
-				}
-				country_event = {
-					id = COX.230
-				}
-			}
-			if = {
-				limit = {
-					check_variable = {
-						Shaanxi_occupied_index > 20
-					}
-				}
-				country_event = {
-					id = COX.234
-					days = 10
-					random_days = 10
-				}
-			}
-		}
-	}
-}
 
 ######################
 # 调试决议 进入新世界 #
@@ -2868,16 +2240,13 @@ Open_the_Gate_of_Steiner = {
 				TNO_startup_nation = yes
 				initiate_display_vars = yes
 				calculate_base_trade_influence = yes
-
 				inherit_technology = COX
-
 				annex_country = {
 					target = QIN
 					transfer_troops = no
 				}
 			}
 			YUN = {
-set_global_flag = LFB_TIAOGUO
 				LFB_alternative_YUN_Long_Yun_Coup_effects = yes
 				annex_country = {
 					target = GUZ
@@ -2886,14 +2255,12 @@ set_global_flag = LFB_TIAOGUO
 			}
 		}
 	}
-
 	debug_IF_WI_start = {
 		visible = {
 			OR = {
 				tag = COX
 				TAG = XBJ
 			}
-
 			is_debug = yes
 		}
 		available = {
@@ -2910,19 +2277,21 @@ set_global_flag = LFB_TIAOGUO
 			}
 		}
 	}
-	debug_huabeiattack_start = {
-		visible = {
-				tag = COX
-
-			is_debug = yes
-		}
-		available = {
-	has_global_flag = LFB_WI_stage_1 #僵持阶段
-		}
-		complete_effect = {
-COX = {huabei_attack_start_effects = yes}
-		}
-	}
+	#debug_huabeiattack_start = {
+		#visible = {
+			#tag = COX
+			#is_debug = yes
+		#}
+		#available = {
+			#has_global_flag = LFB_WI_stage_1			#僵持阶段 #debug为什么还要加这种条件
+		#}
+		#complete_effect = {
+			#COX = {
+				#huabei_attack_start_effects = yes
+				#set_country_flag = COX_GAW_GUI_Avaliable
+			#}
+		#}
+	#}
 	XBJ_QIN_fucking = {
 		visible = {
 			is_debug = yes
@@ -2975,75 +2344,7 @@ COX = {huabei_attack_start_effects = yes}
 		fire_only_once = yes
 		complete_effect = {
 			hidden_effect = {
-					set_country_flag = COX_Liberate_Shaanxi_decision12_done
-					set_country_flag = LFB_MEA_happen
-					set_province_name = {
-						id = 4801
-						name = MEA_wulanbatuo
-					}
-				add_command_power = -30
-			MEA = { transfer_state = 815 }
-			MEA = { transfer_state = 621 }
-			MEA = { transfer_state = 955 }
-			MEA = { transfer_state = 915 }
-			MEA = { transfer_state = 330 }
-			MEA = { transfer_state = 814 }
-			MEA = { load_oob = "MEA" }   	
-					MEN= { declare_war_on = {
-							target = MEA
-							type = annex_everything
-						}}
-			every_state = {
-				limit = {
-					is_core_of = MEN
-				}
-			    add_core_of = MEA
-		    }
-
-				MEN = {
-					every_unit_leader = {
-						set_nationality = MEA
-					}
-				}
-				MEA = {
-					add_country_leader_role = {
-						character = MEN_zedengbaer
-						country_leader = {
-							desc = "POLITICS_youmujiazedengbaer_DESC"
-							ideology = communist_national_communism_subtype
-							expire = "1999.1.1.1"
-						}
-					}
-					retire_country_leader = yes
-					add_advisor_role = {
-						character = MEN_zedengbaer
-						activate = yes
-						advisor = {
-							slot = head_of_government
-							cost = -1
-							idea_token = MEN_zedengbaer
-							traits = {
-								MEA_zedengbaer
-							}
-						}
-					}
-					activate_advisor = MEN_zedengbaer
-					add_advisor_role = {
-						character = MEN_batedaoerji
-						activate = yes
-						advisor = {
-							slot = foreign_minister
-							cost = -1
-							idea_token = MEN_batedaoerji_for
-							traits = {
-								MEA_batedaoerji
-							}
-						}
-					}
-					activate_advisor = MEN_batedaoerji
-					add_ideas = MEN_attack_idea_3
-					add_ideas = MEN_attack_idea_4
-				}
+					
 			}
 		}
 	}
@@ -3089,11 +2390,10 @@ COX = {huabei_attack_start_effects = yes}
 		}
 		available = {
 			always = yes
-		has_global_flag = LFB_WI_ongoing
+			has_global_flag = LFB_WI_ongoing
 		}
 		complete_effect = {
 			set_country_flag = COX_Liberation_of_Lanzhou
-			
 			hidden_effect = {
 				annex_country = {
 					target = GAN

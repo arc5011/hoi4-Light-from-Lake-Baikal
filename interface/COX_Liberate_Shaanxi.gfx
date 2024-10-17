@@ -8,12 +8,8 @@ spriteTypes = {
 		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/event_background_bg.png"
 	}
 	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_Turn_page"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/Turn_page.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_information"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/information.png"
+		name = "GFX_Liberate_Shaanxi_icon"
+		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision0.png"
 	}
 	spriteType = {
 		name = "GFX_COX_Liberate_Shaanxi_state1"
@@ -27,83 +23,44 @@ spriteTypes = {
 		name = "GFX_COX_Liberate_Shaanxi_state3"
 		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/state3.png"
 	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision1"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision1.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision2"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision2.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision3"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision3.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision4"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision4.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision5"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision5.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision6"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision6.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision7"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision7.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision8"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision8.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision9"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision9.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision10"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision10.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision11"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision11.png"
-	}
-	spriteType = {
-		name = "GFX_COX_Liberate_Shaanxi_decision12"
-		texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/decision12.png"
-	}
 	progressbartype = {
 		name = "GFX_COX_Liberate_Shaanxi_pro"
-		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_full1.png"
+		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_full.png"
 		textureFile2 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_empty.png"
 		size = {
-			x = 470
-			y = 70
+			x = 467
+			y = 74
 		}
 		effectFile = "gfx/FX/progress.lua"
 		horizontal = yes
+		legacy_lazy_load = no
 	}
+	frameAnimatedSpriteType = {
+        name = "GFX_COX_Liberate_Shaanxi_pro_Animation"
+        texturefile = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_Animation.png"
+        noOfFrames = 9
+        animation_rate_fps = 30
+        looping = yes
+        play_on_show = yes
+    }
 	progressbartype = {
 		name = "GFX_COX_Liberate_Shaanxi_pro_right_1"
-		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_right_2.png"
-		textureFile2 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_right1.png"
+		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/Progress_Bar_Right_Full.png"
+		textureFile2 = "gfx/scripted_gui/COX_Liberate_Shaanxi/Progress_Bar_Right_Empty.png"
 		size = {
-			x = 60
-			y = 300
+			x = 90
+			y = 303
 		}
 		effectFile = "gfx/FX/progress.lua"
 		horizontal = no
 	}
 	progressbartype = {
 		name = "GFX_COX_Liberate_Shaanxi_pro_left_1"
-		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_left_2.png"
-		textureFile2 = "gfx/scripted_gui/COX_Liberate_Shaanxi/progress_left1.png"
+		textureFile1 = "gfx/scripted_gui/COX_Liberate_Shaanxi/Progress_Bar_Left_Full.png"
+		textureFile2 = "gfx/scripted_gui/COX_Liberate_Shaanxi/Progress_Bar_Left_Empty.png"
 		size = {
-			x = 60
-			y = 300
+			x = 90
+			y = 303
 		}
 		effectFile = "gfx/FX/progress.lua"
 		horizontal = no

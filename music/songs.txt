@@ -8,3 +8,36 @@ music = {
 		}
 	}
 }
+music = {
+	song = "Renmin Wansui"
+	chance = {
+		modifier = {
+			factor = 0
+			has_war = no
+		}
+	}
+}
+music = {
+	song = "Nanking Requiem"
+	chance = {
+		modifier = {
+			factor = 0
+			has_war = no
+		}
+	}
+}
+music = {
+	song = "TNO_SE_LFB_GAW"
+	chance = {
+		modifier = { factor = 0 }
+	}
+}
+music = {
+	song = "Congratulations"
+	chance = {
+		modifier = {
+			factor = 0
+			has_war = no
+		}
+	}
+}

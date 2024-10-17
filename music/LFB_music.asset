@@ -1,6 +1,6 @@
 music = {
 	name = "maintheme"
-	file = "Military Nature.ogg"
+	file = "maintheme.ogg"
 	volume = 1
 }
 music = {
@@ -8,8 +8,23 @@ music = {
 	file = "LFB maintheme.ogg"
 	volume = 1
 }
-#music = {
-#	name = "Follow The Party,Follow Mao(TNO style remix)"
-#	file = "Follow the Party,Follow Mao.ogg"
-#	volume = 1
-#}
+music = {
+	name = "Renmin Wansui"
+	file = "Renmin Wansui.ogg"
+	volume = 1
+}
+music = {
+	name = "Nanking Requiem"
+	file = "Nanking Requiem.ogg"
+	volume = 1
+}
+music = {
+	name = "TNO_SE_LFB_GAW"
+	file = "TNO_SE_LFB_GAW.ogg"
+	volume = 1
+}
+music = {
+	name = "Congratulations"
+	file = "Congratulations.ogg"
+	volume = 1
+}

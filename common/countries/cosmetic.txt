@@ -2338,6 +2338,97 @@ TNS_German = {
 
 #### LFB ####
 COX_XBJ = {
-	color = rgb { 175 15 28 }
-	color_ui = rgb { 175 15 28 }
+	color = rgb { 205 25 38 }
+	color_ui = rgb { 205 25 38 }
+}
+
+SHX_occupied = {
+	color = rgb { 125 25 35 }
+	color_ui = rgb { 125 25 35 }
+}
+
+HNA_occupied = {
+	color = rgb { 135 25 35 }
+	color_ui = rgb { 135 25 35 }
+}
+
+XIK_KIX = {
+	color = rgb { 5 85 166 }
+	color_ui = rgb { 5 85 166 }
+}
+DMN_buffer_state = {
+	color = rgb { 150 150 150 }
+	color_ui = rgb { 150 150 150 }
+}
+
+COX_ROC = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_DRC = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_CR = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_ROC_UN = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_ROC_TR = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_ROC_BSWS = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_DRC_UN = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_DRC_TR = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_DRC_BSWS = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_CR_UN = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_CR_TR = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+
+COX_CR_BSWS = {
+	color = rgb { 61 107 153 }
+	color_ui = rgb { 61 107 153 }
+}
+YUN_civil_war = {
+	color = rgb { 5 85 166 }
+	color_ui = rgb { 5 85 166 }
+}
+YUN_civil_war = {
+	color = rgb { 5 85 166 }
+	color_ui = rgb { 5 85 166 }
+}
+COX_civil_war = {
+	color = rgb { 205 25 38 }
+	color_ui = rgb { 205 25 38 }
 }

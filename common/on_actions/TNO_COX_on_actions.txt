@@ -7,69 +7,6 @@ on_actions = {
 					days = 3
 				}
 			}
-			COX = {
-				add_to_array = {
-					CountryInfo_top_tab_array = 1
-				}
-				add_to_array = {
-					CountryInfo_top_tab_array = 3
-				}
-				add_to_array = {
-					CountryInfo_top_tab_array = 4
-				}
-				set_variable = {
-					CountryInfo_tab = 1
-				}
-				#1
-				add_to_array = {
-					CountryInfo_array_main = 101
-				}
-				add_to_array = {
-					CountryInfo_folder_country_101 = 1
-				}
-				add_to_array = {
-					CountryInfo_folder_country_101 = 2
-				}
-				add_to_array = {
-					CountryInfo_folder_country_101 = 3
-				}
-				#2
-				add_to_array = {
-					CountryInfo_array_main = 102
-				}
-				add_to_array = {
-					CountryInfo_folder_country_102 = 4
-				}
-				add_to_array = {
-					CountryInfo_folder_country_102 = 5
-				}
-				add_to_array = {
-					CountryInfo_folder_country_102 = 6
-				}
-				#3
-				add_to_array = {
-					CountryInfo_array_main = 103
-				}
-				add_to_array = {
-					CountryInfo_folder_country_103 = 7
-				}
-				add_to_array = {
-					CountryInfo_folder_country_103 = 8
-				}
-				if = {
-					limit = {
-						check_variable = {
-							CountryInfo_array_main^num > 0
-						}
-					}
-					for_each_loop = {
-						array = CountryInfo_array_main
-						add_to_array = {
-							CountryInfo_storage_array = v
-						}
-					}
-				}
-			}
 		}
 	}
 	on_capitulation = {
@@ -91,107 +28,28 @@ on_actions = {
 			}
 			else_if = {
 				limit = {
+					has_global_flag = LFB_IF_GAW
 					FROM = {
 						tag = COX
 					}
 					ROOT = {
-						OR = {
-							tag = CHI
-							tag = MAN
-							tag = GNG
+						tag = MAN
+					}
+					OR = {
+						NCC = {
+							has_capitulated = yes
 						}
-					}
-					CHI = {
-						has_capitulated = yes
-					}
-					MAN = {
-						has_capitulated = yes
-					}
-					GNG = {
-						has_capitulated = yes
+						608 = {is_controlled_by = COX}
+						608 = {is_controlled_by = YUN}
 					}
 				}
 				COX = {
-					country_event = {
-						id = COX.1000
-						days = 5
-					}
-					every_country = {
-						limit = {
-							has_war_with = COX
-						}
-						white_peace = COX
-					}
-					annex_country = {
-						target = MEN
-					}
-					annex_country = {
-						target = CHI
-					}
-					annex_country = {
-						target = SHX
-					}
-					annex_country = {
-						target = GAN
-					}
-					annex_country = {
-						target = QIN
-					}
-					annex_country = {
-						target = XIN
-					}
-					annex_country = {
-						target = TIB
-					}
-					annex_country = {
-						target = XIK
-					}
-					annex_country = {
-						target = GUZ
-					}
-					annex_country = {
-						target = GUX
-					}
-					annex_country = {
-						target = YUN
-					}
-					annex_country = {
-						target = GNG
-					}
-					annex_country = {
-						target = PRC
-					}
-					set_state_owner = 524
-					set_state_owner = 591
-					set_state_owner = 809
-					set_state_owner = 810
-					set_state_owner = 811
-					set_state_owner = 812
-					set_state_owner = 1464
-					set_state_owner = 1024
-					set_state_owner = 560
-					set_state_owner = 527
-					set_state_owner = 1018
-					set_state_owner = 962
-					set_state_owner = 655
-					set_state_owner = 525
-					set_state_owner = 963
-					605 = {
-						set_demilitarized_zone = no
-					}
-					1538 = {
-						set_demilitarized_zone = no
-					}
-					THIS = {
-						every_owned_state = {
-							add_core_of = PREV
-						}
-					}
+					activate_mission = COX_GAW_GUI_JAP_Surrender_timer
 				}
 			}
 			if = {
 				limit = {
-					has_global_flag = COX_GAN_war
+					has_global_flag = LFB_IF_COX_GAN_war
 					FROM = {
 						tag = COX
 					}
@@ -199,19 +57,153 @@ on_actions = {
 						tag = GAN
 					}
 				}
-				LFB_COX_GAN_war_win_effects = yes
+				LFB_IF_COX_GAN_war_win_effects = yes
 				COX = {
 					country_event = {
-						id = LFB_COX_nc.1
+						id = LFB_COX_nc.4
 					}
 				}
 			}
+			if = {
+				limit = {
+					has_global_flag = LFB_IF_COX_TIB_WAR
+					FROM = {
+						tag = COX
+					}
+					ROOT = {
+						tag = TIB
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = TIB
+					}
+					add_core_of = COX
+				}
+				COX = {
+					annex_country = {
+						target = TIB
+					}
+					add_ideas = COX_TIB_problem
+				}
+			}
+			### 内战 ###
+			if = {
+				limit = {
+					has_global_flag = LFB_IF_COX_YUN_war
+					FROM = {
+						tag = COX
+					}
+					ROOT = {
+						tag = YUN
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = YUN
+							is_core_of = CHI
+							is_core_of = MAN
+							is_core_of = NCC
+						}
+					}
+					add_core_of = COX
+				}
+				COX = {
+					annex_country = {
+						target = YUN
+					}
+					country_event = LFBUG.301
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = LFB_IF_COX_YUN_war
+					FROM = {
+						tag = YUN
+					}
+					ROOT = {
+						tag = COX
+					}
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = COX
+							is_core_of = CHI
+							is_core_of = MAN
+							is_core_of = NCC
+						}
+					}
+					add_core_of = YUN
+				}
+				YUN = {
+					annex_country = {
+						target = COX
+					}
+					country_event = LFBUG.302
+				}
+			}
+			### 战败 ###
+			if = {
+				limit = {
+					AND = {
+						FROM = {
+							tag = JAP
+						}
+						ROOT = {
+							tag = YUN
+						}
+						has_global_flag = LFB_IF_GAW
+					}
+				}
+				COX = {
+					country_event = DCG.1
+				}
+				LFB_IF_DCG_YUN_Defeat_Effects = yes
+			}
+			
 		}
 	}
 	on_state_control_changed = {
 		effect = {
 			if = {
+				#改名
 				limit = {
+					OR = {
+						ROOT = {
+							original_tag = MEA
+						}
+						ROOT = {
+							original_tag = COX
+						}
+					}
+					
+					FROM.FROM = {
+						state = 330
+					}
+				}
+				set_province_name = {
+					id = 4801
+					name = MEA_wulanbatuo
+				}
+			}
+			if = {
+				#改名
+				limit = {
+					ROOT = {
+						original_tag = MEN
+					}
+					FROM.FROM = {
+						state = 330
+					}
+				}
+				reset_province_name = 4801
+			}
+			###解放新疆###
+			if = {
+				limit = {
+					has_global_flag = LFB_COX_XIN_war
 					FROM.FROM = {
 						state = 617
 					}
@@ -230,21 +222,67 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					has_global_flag = LFB_IF_GAW
 					FROM.FROM = {
-						state = 1302
-					}
-					FROM = {
-						tag = GAN
+						state = 609
 					}
 					ROOT = {
 						tag = COX
 					}
-					has_global_flag = COX_GAN_war
+					608 = {is_controlled_by = COX}
 				}
-				ROOT = {
-					country_event = {
-						id = COX.206
+				COX = {
+					if = {
+						limit = {
+							NOT = {
+								has_country_flag = COX_GAW_GUI_MAN_SpecOp_Enabled
+							}
+						}
+						activate_mission = COX_GAW_GUI_Escalation_timer
 					}
+				}
+			}
+			#if = {
+				#limit = {
+					#FROM.FROM = {
+						#state = 1302
+					#}
+					#FROM = {
+						#tag = GAN
+					#}
+					#ROOT = {
+						#tag = COX
+					#}
+					#has_global_flag = LFB_IF_COX_GAN_war
+				#}
+				#ROOT = {
+					#country_event = {
+						#id = COX.206
+					#}
+				#}
+			#}
+			### 战败 ###
+			if = {#COX战败
+				limit = {
+					ROOT = { tag = JAP }
+					FROM = { tag = COX }
+				}
+				if = {
+					limit = {
+						FROM = {
+							OR = {
+								906 = {
+									is_controlled_by = ROOT
+								}
+								surrender_progress > 0.6
+							}
+						}
+					}
+					LFB_IF_DCG_COX_Defeat_Effects = yes
+					YUN = {#大帅该死了
+						delete_unit = {}
+					}
+					FROM = { country_event = DCG.2 }
 				}
 			}
 		}
@@ -271,10 +309,10 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
-					has_global_flag = COX_GAN_war
+					has_global_flag = LFB_IF_COX_GAN_war
 				}
 				set_variable = {
-					COX_Liberation_of_Lanzhou_days = days_mission_timeout@COX_Liberation_of_Lanzhou_invaded_Jap
+					COX_Liberation_of_Lanzhou_days = days_mission_timeout@COX_Liberation_of_Lanzhou_war_timer
 				}
 			}
 			if = {
@@ -293,11 +331,15 @@ on_actions = {
 					value = Lanzhou_infiltration_decay
 				}
 				clamp_variable = {
-					var = Lanzhou_integration_index
+					var = Lanzhou_infiltration_index
 					min = 0
 					max = 100
 				}
 				calc_GAN_infiltration = yes
+			}
+			if = {
+				limit = {COX = {has_country_flag = COX_GAW_GUI_Avaliable}}
+				COX_GAW_GUI_alert_ckeck = yes
 			}
 		}
 	}

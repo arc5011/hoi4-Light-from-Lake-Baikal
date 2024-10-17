@@ -1,0 +1,347 @@
+add_namespace = LFB_GAW_GUI
+
+
+country_event = {#有条件投降
+    id = LFB_GAW_GUI.1
+	title = LFB_GAW_GUI.1.t
+	desc = LFB_GAW_GUI.1.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.1.a
+		hidden_effect = {
+			JAP = {
+				set_temp_variable = { Victory_ID = 27 }
+				set_temp_variable = { Victory_Outcome = 2 }
+				set_temp_variable = { Victory_Points = -700 }
+				Cold_War_GUI_ManipulateVictory = yes
+			}
+			COX_NC_Peace_Deal_NCC_Peace_effects = yes
+			if = {
+				limit = { 
+					check_variable = {
+					var = COX_GAW_GUI_Region_1_Chaos
+					value = 80
+					compare = less_than
+					}
+				}
+				COX_NC_Peace_Deal_NCC_Low_Chaos_effects = yes
+			}
+			COX_IF_Navy_check = yes
+			
+		}
+		custom_effect_tooltip = LFB_GAW_GUI.1.a.tt
+	}
+	option = {
+		name = LFB_GAW_GUI.1.b
+		custom_effect_tooltip = LFB_GAW_GUI_1_b_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = TNO_my_world_is_on_fire_how_about_yours }
+				}
+				fire_nuclear_war = yes
+			}
+		}
+	}
+}
+
+
+country_event = {#无条件投降
+    id = LFB_GAW_GUI.2
+	title = LFB_GAW_GUI.2.t
+	desc = LFB_GAW_GUI.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.2.a
+		hidden_effect = {
+			JAP = {
+				set_temp_variable = { gdp_growth_temp = -10.0 }
+				econ_gdp_growth_change = yes
+				set_temp_variable = { inflation_temp = 10.0 }
+				econ_inflation_change = yes
+				set_temp_variable = { temp_credit_rating = 6 }
+				set_temp_variable = { temp_credit_rating_min = 2 }
+				set_temp_variable = { temp_credit_rating_max = 7 }
+				econ_set_credit_rating = yes
+				econ_set_min_credit_rating = yes
+				econ_set_max_credit_rating = yes
+				set_temp_variable = { Victory_ID = 27 }
+				set_temp_variable = { Victory_Outcome = 1 }
+				set_temp_variable = { Victory_Points = -1500 }
+				Cold_War_GUI_ManipulateVictory = yes
+				country_event = { id = japdlc_endgame.17 days = 60 }
+			}
+			COX_NC_Peace_Deal_NCC_Peace_effects = yes
+			if = {
+				limit = { 
+					check_variable = {
+					var = COX_GAW_GUI_Region_1_Chaos
+					value = 80
+					compare = less_than
+					}
+				}
+				COX_NC_Peace_Deal_NCC_Low_Chaos_effects = yes
+			}
+			COX_NC_Peace_Deal_MAN_Peace_effects = yes
+			if = {
+				limit = { 
+					check_variable = {
+					var = COX_GAW_GUI_Region_2_Chaos
+					value = 80
+					compare = less_than
+					}
+				}
+				COX_NC_Peace_Deal_MAN_Low_Chaos_effects = yes
+			}
+			COX_IF_Navy_check = yes
+		}
+		custom_effect_tooltip = LFB_GAW_GUI.2.a.tt
+	}
+}
+
+country_event = {#大同解放
+    id = LFB_GAW_GUI.4
+	title = LFB_GAW_GUI.4.t
+	desc = LFB_GAW_GUI.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.4.a
+
+	}
+}
+
+country_event = {#洛阳解放
+    id = LFB_GAW_GUI.5
+	title = LFB_GAW_GUI.5.t
+	desc = LFB_GAW_GUI.5.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.5.a
+
+	}
+}
+
+country_event = {#北京解放
+    id = LFB_GAW_GUI.6
+	title = LFB_GAW_GUI.6.t
+	desc = LFB_GAW_GUI.6.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.6.a
+
+	}
+}
+
+country_event = {#北京解放
+    id = LFB_GAW_GUI.7
+	title = LFB_GAW_GUI.7.t
+	desc = LFB_GAW_GUI.7.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.7.a
+
+	}
+}
+
+country_event = {#济南解放
+    id = LFB_GAW_GUI.8
+	title = LFB_GAW_GUI.8.t
+	desc = LFB_GAW_GUI.8.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.8.a
+
+	}
+}
+
+country_event = {#和平统一西藏
+    id = LFB_GAW_GUI.9
+	title = LFB_GAW_GUI.9.t
+	desc = LFB_GAW_GUI.9.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.9.a
+		custom_effect_tooltip = LFB_IF_TIB_peace_tt
+		hidden_effect = {
+			annex_country = {
+				target = TIB
+			}
+			every_state = {
+				limit = {
+					is_core_of = TIB
+				}
+				add_core_of = COX
+			}
+			COX = {
+				add_ideas = COX_TIB_problem
+			}
+		}
+	}
+}
+
+
+
+country_event = {#武力统一西藏-准备
+	id = LFB_GAW_GUI.10
+	title = LFB_GAW_GUI.10.t
+	desc = LFB_GAW_GUI.10.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.10.a
+		custom_effect_tooltip = LFB_IF_COX_TIB_WAR_tt
+		hidden_effect = {
+			COX = {
+				country_event = {
+					id = LFB_GAW_GUI.11
+					days = 30
+				}
+			}
+			set_global_flag = LFB_IF_COX_TIB_WAR
+		}
+	}
+}
+
+country_event = {#武力统一西藏
+	id = LFB_GAW_GUI.11
+	title = LFB_GAW_GUI.11.t
+	desc = LFB_GAW_GUI.11.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.11.a
+		COX = {
+			declare_war_on = {
+				target = TIB
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {#接触游击队-深入敌后
+    id = LFB_GAW_GUI.21
+	title = LFB_GAW_GUI.21.t
+	desc = LFB_GAW_GUI.21.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.21.a
+	}
+}
+
+country_event = {#联络敌后武装-从田中来，到田中去
+    id = LFB_GAW_GUI.22
+	title = LFB_GAW_GUI.22.t
+	desc = LFB_GAW_GUI.22.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.22.a
+		custom_effect_tooltip = LFB_GAW_GUI_22_a_tt
+		hidden_effect = {
+			COX_GAW_GUI_NCC_Fort_Decrease_effect = yes
+			COX_GAW_GUI_NCC_Fort_Decrease_effect = yes
+			COX_GAW_GUI_NCC_Fort_Decrease_effect = yes
+			add_to_variable = {COX_GAW_GUI_Region_1_Chaos_Increase = 1}
+			COX_GAW_GUI_update = yes
+		}
+		
+	}
+	option = {
+		name = LFB_GAW_GUI.22.b
+		hidden_effect = {
+			add_days_mission_timeout = {
+				mission = COX_GAW_GUI_NCC_Fort_timer
+				days = 20
+			}
+			COX = {set_country_flag = COX_GAW_GUI_SpecOp_102_done_b}
+		}
+	}
+}
+
+country_event = {#团结抗日力量-沉沦
+    id = LFB_GAW_GUI.23
+	title = LFB_GAW_GUI.23.t
+	desc = LFB_GAW_GUI.23.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.23.a
+		hidden_effect = {
+			country_event = {
+				id = LFB_GAW_GUI.24
+				days = 2
+			}
+		}
+	}
+}
+country_event = {#团结抗日力量-立众
+    id = LFB_GAW_GUI.24
+	title = LFB_GAW_GUI.24.t
+	desc = LFB_GAW_GUI.24.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.24.a
+		custom_effect_tooltip = LFB_GAW_GUI_24_a_tt
+		hidden_effect = {
+			add_ideas = COX_idea_huabei_15
+		}
+	}
+	option = {
+		name = LFB_GAW_GUI.24.b
+		custom_effect_tooltip = LFB_GAW_GUI_24_b_tt
+		hidden_effect = {
+			add_ideas = COX_idea_huabei_16
+			add_to_variable = {COX_GAW_GUI_Region_1_Chaos_Increase = 0.5}
+			COX_GAW_GUI_update = yes
+		}
+		
+	}
+}
+country_event = {
+	id = LFB_GAW_GUI.31
+	title = LFB_GAW_GUI.31.t
+	desc = LFB_GAW_GUI.31.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.31.a
+		custom_effect_tooltip = LFB_GAW_GUI_31_tt
+	}
+}
+country_event = {
+	id = LFB_GAW_GUI.41
+	title = LFB_GAW_GUI.41.t
+	desc = LFB_GAW_GUI.41.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = LFB_GAW_GUI.41.a
+		custom_effect_tooltip = LFB_GAW_GUI_41_tt
+		hidden_effect = {
+			CHI = {
+				transfer_state = 1602
+				if = {
+					limit = {has_dlc = "Man the Guns"}
+					load_oob = "COX_IF_naval_mtg"
+				}
+				else_if = {
+					limit = {NOT = {has_dlc = "Man the Guns"}}
+					load_oob = "COX_IF_naval"
+				}
+				transfer_navy = {target = COX}
+			}
+			ZZZ = {transfer_state = 1602}
+		}
+	}
+}

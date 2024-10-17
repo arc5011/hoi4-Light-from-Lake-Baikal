@@ -1,0 +1,306 @@
+#################
+# /// Index /// #
+#################
+defined_text = {#结束界面图片-COX
+	name = Get_TNO_CountryClosing_picture_COX
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_defeated_ending 
+		}
+		localization_key = "GFX_TNO_CountryClosing_picture_COX_IF_defeated_Ending"
+	}
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_UG_ending
+		}
+		localization_key = "GFX_TNO_CountryClosing_picture_COX_IF_UG_Ending"
+	}
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_civ_war_Ending
+		}
+		localization_key = "GFX_TNO_CountryClosing_picture_COX_IF_civ_war_Ending"
+	}
+	
+	text = {
+		trigger = {}
+		localization_key = "GFX_TNO_CountryClosing_picture_COX"
+	}
+
+}
+
+defined_text = {#结束界面图片-XBJ
+	name = Get_TNO_CountryClosing_picture_XBJ
+	text = {
+		trigger = {}
+		localization_key = "GFX_TNO_CountryClosing_picture_XBJ_early_ending"
+	}
+}
+#COX
+defined_text = {#结束界面文本-COX
+	name = Get_TNO_CountryClosing_epilogue_COX
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_defeated_ending 
+		}
+		localization_key = "TNO_CountryClosing_epilogue_COX_IF_defeated_ending"
+	}
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_UG_ending 
+		}
+		localization_key = "TNO_CountryClosing_epilogue_COX_IF_UG_ending"
+	}
+	text = {
+		trigger = {
+			has_country_flag = COX_IF_civ_war_ending 
+		}
+		localization_key = "TNO_CountryClosing_epilogue_COX_IF_civ_war_ending"
+	}
+	
+	text = {
+		trigger = {}
+		localization_key = "TNO_CountryClosing_epilogue_COX"
+	}
+}
+
+defined_text = {#结束界面文本-XBJ
+	name = Get_TNO_CountryClosing_epilogue_XBJ
+	text = {
+		trigger = {}
+		localization_key = "TNO_CountryClosing_epilogue_XBJ_early_ending"
+	}
+}
+
+defined_text = {#开始界面索引
+	name = Get_FolderLoc_COX
+	text = {
+		trigger = {
+			check_variable = { f = 101 }
+		}
+		localization_key = COX_CountryInfo_Folder.101
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 102 }
+		}
+			localization_key = COX_CountryInfo_Folder.102
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 103 }
+		}
+		localization_key = COX_CountryInfo_Folder.103
+	}
+}
+
+defined_text = {#开始界面文本
+	name = Get_ContentLoc_COX
+	text = {
+		trigger = {
+			check_variable = { f = 1 }
+		}
+		localization_key = COX_CountryInfo_Content.1
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 2 }
+		}
+		localization_key = COX_CountryInfo_Content.2
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 3 }
+		}
+		localization_key = COX_CountryInfo_Content.3
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 4 }
+		}
+		localization_key = COX_CountryInfo_Content.4
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 5 }
+		}
+		localization_key = COX_CountryInfo_Content.5
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 6 }
+		}
+		localization_key = COX_CountryInfo_Content.6
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 7 }
+		}
+		localization_key = COX_CountryInfo_Content.7
+	}
+	text = {
+		trigger = {
+			check_variable = { f = 8 }
+		}
+		localization_key = COX_CountryInfo_Content.8
+	}
+}
+
+defined_text = {#开始界面文本内容
+	name = Get_ContentLoc_desc_COX
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 1 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.1
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 2 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.2
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 3 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.3
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 4 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.4
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 5 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.5
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 6 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.6
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 7 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.7
+	}
+	text = {
+		trigger = {
+			check_variable = { CountryInfo_Selected = 8 }
+		}
+		localization_key = COX_CountryInfo_Content_desc.8
+	}
+}
+
+defined_text = {#动态结束界面标题
+	name = GET_TNO_CountryClosing_left_title
+	#COX
+	text = {
+		trigger = {
+			original_tag = COX
+			has_country_flag = COX_IF_defeated_ending
+		}
+		localization_key = TNO_CountryClosing_left_title_COX_IF_defeated_ending
+	}
+
+	text = {
+		trigger = {
+			original_tag = COX
+			has_country_flag = COX_IF_UG_ending
+		}
+		localization_key = TNO_CountryClosing_left_title_COX_IF_UG_ending
+	}
+
+	text = {
+		trigger = {
+			original_tag = COX
+			has_country_flag = COX_IF_civ_war_ending
+		}
+		localization_key = TNO_CountryClosing_left_title_COX_IF_civ_war_ending
+	}
+	text = {
+		trigger = {
+			original_tag = XBJ
+			has_country_flag = XBJ_early_end
+		}
+		localization_key = TNO_CountryClosing_left_title_XBJ_early_ending
+	}
+	#通用
+	text = {
+		trigger = {}
+		localization_key = TNO_CountryClosing_left_title_vanilla
+	}
+}
+
+defined_text = {#动态结束界面-特别鸣谢tt
+	name = Get_TNO_CountryClosing_select_btn_credits_tt
+	text = {
+		trigger = {
+			OR = {
+				original_tag = XBJ
+				original_tag = COX
+			}
+		}
+		localization_key = TNO_CountryClosing_select_btn_credits_tt_LFB
+	}
+	text = {
+		trigger = {}
+		localization_key = TNO_CountryClosing_select_btn_credits_tt_vanilla
+	}
+}
+
+defined_text = {#乌兰巴托动态城市介绍
+	name = Statelore_Get_wulanbatuo_name
+	text = {
+		trigger = {
+			OR = {
+				MEA = {
+					owns_state = 330
+				}
+				COX = {
+					owns_state = 330
+				}
+			}
+			
+		}
+		localization_key = state_lore_name.363_MEA
+	}
+	text = {
+		localization_key = state_lore_name.363_MEN
+	}
+}
+defined_text = {
+	name = Statelore_Get_wulanbatuo_intials
+	text = {
+		trigger = {
+			MEA = {
+				owns_state = 330
+			}
+		}
+		localization_key = state_lore_initials.363_MEA
+	}
+	text = {
+		localization_key = state_lore_initials.363_MEN
+	}
+}
+defined_text = {
+	name = Statelore_Get_wulanbatuo_desc
+	text = {
+		trigger = {
+			MEA = {
+				owns_state = 330
+			}
+		}
+		localization_key = state_lore_desc.363_MEA
+	}
+	text = {
+		localization_key = state_lore_desc.363_MEN
+	}
+}
+

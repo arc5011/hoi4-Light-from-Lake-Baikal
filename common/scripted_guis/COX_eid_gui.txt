@@ -11,11 +11,41 @@ scripted_gui = {
 		
 		effects = {
 			COX_eid_gui_plus_Button_click = {
-				add_to_variable = { COX_eid_machine_tool_display = 1 }
+				if = {
+					limit = {
+						check_variable = {
+							COX_eid_exchange_mode = 1
+						}
+					}
+					add_to_variable = { COX_eid_machine_tool_display = 4 }
+				}
+				if = {
+					limit = {
+						check_variable = {
+							COX_eid_exchange_mode = 2
+						}
+					}
+					add_to_variable = { COX_eid_machine_tool_display = 1 }
+				}
 				COX_eid_gui_reflesh = yes
 			}
 			COX_eid_gui_minus_Button_click = {
-				add_to_variable = { COX_eid_machine_tool_display = -1 }
+				if = {
+					limit = {
+						check_variable = {
+							COX_eid_exchange_mode = 1
+						}
+					}
+					add_to_variable = { COX_eid_machine_tool_display = -4 }
+				}
+				if = {
+					limit = {
+						check_variable = {
+							COX_eid_exchange_mode = 2
+						}
+					}
+					add_to_variable = { COX_eid_machine_tool_display = -1 }
+				}
 				COX_eid_gui_reflesh = yes
 			}
 			COX_eid_gui_Region_button_click = {
@@ -23,11 +53,9 @@ scripted_gui = {
 					limit = {
 						check_variable = { COX_eid_exchange_mode = 1 }
 					}
-					set_temp_variable = { temp_econ_GDP_boost_flat = COX_eid_machine_tool_effect_display }
-					divide_temp_variable = {
-						temp_econ_GDP_boost_flat = 1000
-					}
-					econ_GDP_boost_once_flat = yes
+					set_temp_variable = { pus_temp = COX_eid_machine_tool_effect_display }
+					
+					econ_pus_change = yes
 				}
 				else_if = {
 					limit = {
@@ -35,7 +63,7 @@ scripted_gui = {
 					}
 					for_loop_effect = {
 						start = 0 
-						end = COX_eid_machine_tool_effect_display
+						end = COX_eid_machine_tool_effect_display 
 						random_owned_controlled_state = {
 							add_resource = {
 								type = power
@@ -49,26 +77,61 @@ scripted_gui = {
 			}
 			COX_eid_gui_production_units_Button_click = {
 				set_variable = { COX_eid_exchange_mode = 1 }
+				set_variable = { COX_eid_machine_tool_display = 0 }
 				COX_eid_gui_reflesh = yes
 			}
 			COX_eid_gui_power_Button_click = {
 				set_variable = { COX_eid_exchange_mode = 2 }
+				set_variable = { COX_eid_machine_tool_display = 0 }
 				COX_eid_gui_reflesh = yes
 			}
 		}
 
 		triggers = {
+			COX_eid_gui_production_units_Button_visible= {
+				NOT = {check_variable = {COX_eid_exchange_mode = 1}}
+			}
+			COX_eid_gui_production_units_selected_Icon_visible= {
+				check_variable = {COX_eid_exchange_mode = 1}
+			}
+			COX_eid_gui_power_Button_visible= {
+				NOT = {check_variable = {COX_eid_exchange_mode = 2}}
+			}
+			COX_eid_gui_power_selected_Icon_visible = {
+				check_variable = {COX_eid_exchange_mode = 2}
+			}
 			COX_eid_gui_plus_Button_click_enabled = {
-				check_variable = { COX_eid_machine_tool_display < COX_eid_machine_tool }
+				OR = {
+					AND = {
+						check_variable = { COX_eid_exchange_mode = 2 }
+						check_variable = { COX_eid_tool_check > 0 }
+					}
+					AND = {
+						check_variable = { COX_eid_exchange_mode = 1 }
+						check_variable = { COX_eid_tool_check > 3 }
+					}
+				}
 			}
 			COX_eid_gui_minus_Button_click_enabled = {
 				check_variable = { COX_eid_machine_tool_display > 0 }
 			}
 			COX_eid_gui_Region_button_click_enabled = {
-				check_variable = { COX_eid_machine_tool_effect_display > 0 }
+				OR = {
+					AND = {
+						check_variable = { COX_eid_exchange_mode = 2 }
+						check_variable = { COX_eid_machine_tool_display > 0 }
+					}
+					AND = {
+						check_variable = { COX_eid_exchange_mode = 1 }
+						check_variable = { COX_eid_machine_tool_display > 3 }
+					}
+				}
+				
 			}
 		}
 		
 	}
 
 }
+
+

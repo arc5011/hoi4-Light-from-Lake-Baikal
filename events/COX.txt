@@ -1,4 +1,42 @@
 add_namespace = COX_BRY
+add_namespace = COX_StartTrick
+country_event = {
+	id = COX_StartTrick.1
+	title = COX_StartTrick.1.t
+	title = COX_StartTrick.1.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = COX_StartTrick.1.a
+		hidden_effect = {
+			BRY = {
+				hidden_effect = {
+					goto_province = 7835
+				}
+				set_country_flag =  TNO_Country_Info_Screen_Visible
+			}
+			ZZZ = {
+				country_event = COX_StartTrick.2
+				hours = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = COX_StartTrick.2
+	title = COX_StartTrick.2.t
+	title = COX_StartTrick.2.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = COX_StartTrick.2.a
+		hidden_effect = {
+			ZZZ = {
+				transfer_state = 1602
+			}
+		}
+	}
+}
 country_event = {
 	id = COX_BRY.1
 	title = COX_BRY.1.t
@@ -9,6 +47,9 @@ country_event = {
 	option = {
 		name = COX_BRY.1.a
 		custom_effect_tooltip = help_from_IRK
+		hidden_effect = {
+			goto_province = 14458
+		}
 		hidden_effect = {
 			if = {
 				limit = {
@@ -760,12 +801,12 @@ country_event = {
 					has_global_flag = COX_tiaoguan_1
 				}
 			}
-			COX = {
-				set_country_flag = TNO_Country_Info_Screen_Visible
-			}
+			
 			COX_xin_civilwar_startup = yes
 			hidden_effect = {
 				COX = {
+					COX_country_info_setup_fix = yes
+					set_country_flag = TNO_Country_Info_Screen_Visible
 					change_tag_from = ROOT
 				}
 				BRY = {
@@ -783,6 +824,7 @@ country_event = {
 							ideology = communist_mao_zedong_thought_subtype
 						}
 					}
+					COX_recruit_officers = yes
 				}
 			}
 		}
@@ -806,8 +848,8 @@ country_event = {
 			ideology = communist
 			long_name = COX_communist_party_XIN_long
 			name = COX_communist_party_XIN
+		}
 	}
-}
 }
 
 country_event = {
@@ -836,11 +878,18 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = COX.3.a
-		#暂不知如何处理
-		#add_ideas = tno_conscription_one_year_draft
+		swap_ideas = {
+			remove_idea = tno_conscription_service_by_requirement
+			add_idea = tno_conscription_limited_conscription
+		}
 		add_stability = 0.05
 		country_event = {
 			id = COX.1
+		}
+		hidden_effect = {
+			COX = {#临时添加了隐藏杂项收入--需要在之后的版本改进
+				add_ideas = COX_fuck_TNO_economy
+			}
 		}
 	}
 }
@@ -1192,8 +1241,8 @@ country_event = {
 				XIN = {
 					save_global_event_target_as = losing_country
 				}
-				set_global_flag = losing_country_multiple
-				set_global_flag = winning_country_multiple
+				#set_global_flag = losing_country_multiple
+				#set_global_flag = winning_country_multiple
 				COX = {
 					# winner simply gets GDP recalculated :
 					recalculate_GDP_and_PUs_on_demand = yes
@@ -1393,6 +1442,7 @@ country_event = {
 		}
 	}
 	fire_only_once = yes
+	clr_global_flag = LFB_COX_XIN_war
 }
 
 country_event = {
@@ -1433,22 +1483,22 @@ country_event = {
 	option = {
 		name = COX.88.a
 		COX = {
-			#create_corps_commander = {
-			#	name = "阿不都克里木·阿巴索夫"
-			#	picture = "Abbasof.dds"
-			#	desc = COX_Abbasof_desc
-			#	traits = {
-			#		cavalry_expert
-			#		commando
-			#		scavenger
-			#	}
-			#	skill = 2
-			#	attack_skill = 3
-			#	defense_skill = 1
-			#	planning_skill = 1
-			#	logistics_skill = 3
-			#}
-			recruit_character = COX_Abbasof
+			create_corps_commander = {
+				name = "阿不都克里木·阿巴索夫"
+				picture = "Abbasof.dds"
+				desc = COX_Abbasof_desc
+				traits = {
+					cavalry_expert
+					commando
+					scavenger
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 3
+			}
+			#recruit_character = COX_Abbasof
 		}
 	}
 	option = {
@@ -2926,29 +2976,31 @@ country_event = {
 				COX_Liu_Shaoqi = {
 					set_nationality = XBJ
 				}
+				set_autonomy = {
+					target = XBJ
+					autonomy_state = pup_difangju
+				}
 				remove_ideas = COX_Chen_Tanqiu_hog
 				add_ideas = COX_Ehmetjan_Qasimi_hog
 				remove_ideas = COX_Liu_Shaoqi_eco
 				add_ideas = COX_Esheiti_Iskhakov_eco
 			}
+
 			XBJ = {
 				#这里用了原版（至少我没发现）没有用到的无人岛，如果XBJ地块方面出了问题从这里找
 				transfer_state = 1602
 				add_state_core = 1602
 
-COX = {set_autonomy = {
-		target = XBJ
-		autonomy_state = pup_difangju
-	}}
-set_politics = {
-	ruling_party = socialist
-	last_election = "1936.1.1"
-	election_frequency = 48
-	elections_allowed = no
-}
-set_popularities = {
-	socialist = 100
-}
+				
+				set_politics = {
+					ruling_party = socialist
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				set_popularities = {
+					socialist = 100
+				}
 
 				promote_character = COX_Liu_Shaoqi
 				add_equipment_to_stockpile = {
@@ -2991,7 +3043,6 @@ set_popularities = {
 				inherit_technology = COX
 			}
 
-
 			#XPC = {          #注意，此效果为测试伊犁军区临时效果
 			#	transfer_state = 2026
 			#add_state_core = 2026
@@ -3006,14 +3057,20 @@ set_popularities = {
 			}
 		}
 	}
-	option = {
-		name = COX.136.a
-	}
+	#option = {
+		#name = COX.136.a
+		#custom_effect_tooltip = COX_136_a_tt
+	#}
 	option = {
 		name = COX.136.b
-		XBJ = {
-			change_tag_from = ROOT
+		custom_effect_tooltip = COX_136_b_tt
+		hidden_effect = {
+			country_lock_all_division_template = yes
+			XBJ = {
+				change_tag_from = ROOT
+			}
 		}
+		
 	}
 }
 
@@ -3079,6 +3136,10 @@ country_event = {
 		custom_effect_tooltip = COX_event_landreform_1_tt
 		set_country_flag = COX_land_reform_succeeded
 		hidden_effect = {
+			COX = {
+				clr_country_flag = COX_land_refrom_on_going
+				clr_country_flag = country_has_gui
+			}
 			remove_dynamic_modifier = {
 				modifier = COX_fs_modifier
 			}
@@ -3218,23 +3279,23 @@ country_event = {
 			#set_country_flag = COX_Liberation_of_Lanzhou
 			#set_country_flag = COX_Liberate_Shaanxi_page1
 		#}
-		country_event = {
-			id = COX.231
-			days = 10
-			random = 5
-		}
-		country_event = {
-			id = COX.232
-			days = 20
-			random = 5
-		}
-		country_event = {
-			id = COX.233
-			days = 3
-			random = 27
-		}
-	}
-}
+		#country_event = {
+			#id = COX.231
+			#days = 10
+			#random = 5
+		#}
+		#country_event = {
+			#id = COX.232
+			#days = 20
+			#random = 5
+		#}
+		#country_event = {
+			#id = COX.233
+			#days = 3
+			#random = 27
+		#}
+	#}
+#}
 
 country_event = {
 	id = COX.207
@@ -3359,229 +3420,9 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = COX.212
-	title = COX.212.t
-	desc = COX.212.d
-	picture = GFX_bad_good_army
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.212.a
-	}
-}
 
-country_event = {
-	id = COX.213
-	title = COX.213.t
-	desc = COX.213.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.213.a
-	}
-}
 
-country_event = {
-	id = COX.214
-	title = COX.214.t
-	desc = COX.214.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.214.a
-	}
-}
 
-country_event = {
-	id = COX.215
-	title = COX.215.t
-	desc = COX.215.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.215.a
-	}
-}
-
-country_event = {
-	id = COX.216
-	title = COX.216.t
-	desc = COX.216.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.216.a
-	}
-}
-
-country_event = {
-	id = COX.217
-	title = COX.217.t
-	desc = COX.217.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.217.a
-	}
-}
-
-country_event = {
-	id = COX.218
-	title = COX.218.t
-	desc = COX.218.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.218.a
-	}
-}
-
-country_event = {
-	id = COX.219
-	title = COX.219.t
-	desc = COX.219.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.219.a
-	}
-}
-
-country_event = {
-	id = COX.220
-	title = COX.220.t
-	desc = COX.220.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.220.a
-		country_event = {
-			id = COX.221
-		}
-	}
-}
-
-country_event = {
-	id = COX.221
-	title = COX.221.t
-	desc = COX.221.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.221.a
-	}
-}
-
-country_event = {
-	id = COX.222
-	title = COX.222.t
-	desc = COX.222.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.222.a
-	}
-}
-
-country_event = {
-	id = COX.223
-	title = COX.223.t
-	desc = COX.223.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.223.a
-	}
-}
-
-country_event = {
-	id = COX.224
-	title = COX.224.t
-	desc = COX.224.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.224.a
-	}
-}
-
-country_event = {
-	id = COX.225
-	title = COX.225.t
-	desc = COX.225.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.225.a
-		country_event = {
-			id = COX.226
-				days = 1
-		}
-	}
-}
-
-country_event = {
-	id = COX.226
-	title = COX.226.t
-	desc = COX.226.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.226.a
-		country_event = {
-			id = COX.227
-				days = 1
-		}
-	}
-}
-
-country_event = {
-	id = COX.227
-	title = COX.227.t
-	desc = COX.227.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.227.a
-	}
-	option = {
-		name = COX.227.b
-	}
-}
-
-country_event = {
-	id = COX.228
-	title = COX.228.t
-	desc = COX.228.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.228.a
-	}
-}
-
-country_event = {
-	id = COX.229
-	title = COX.229.t
-	desc = COX.229.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.229.a
-	}
-}
-
-country_event = {
-	id = COX.230
-	title = COX.230.t
-	desc = COX.230.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.230.a
-	}
-}
 
 country_event = {
 	id = COX.231
@@ -3595,38 +3436,6 @@ country_event = {
 }
 
 country_event = {
-	id = COX.232
-	title = COX.232.t
-	desc = COX.232.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.232.a
-	}
-}
-
-country_event = {
-	id = COX.233
-	title = COX.233.t
-	desc = COX.233.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.233.a
-	}
-}
-
-country_event = {
-	id = COX.234
-	title = COX.234.t
-	desc = COX.234.d
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = COX.234.a
-	}
-}
-country_event = {
 	id = COX.235
 	title = COX.235.t
 	desc = COX.235.d
@@ -3637,6 +3446,7 @@ country_event = {
 		name = COX.235.a
 	}
 }
+
 country_event = {
 	id = COX.236
 	title = COX.236.t
@@ -3776,8 +3586,8 @@ country_event = {
 			JAP = {
 				save_global_event_target_as = losing_country
 			}
-			set_global_flag = losing_country_multiple
-			set_global_flag = winning_country_multiple
+			#set_global_flag = losing_country_multiple
+			#set_global_flag = winning_country_multiple
 			COX = {
 				# winner simply gets GDP recalculated :
 				recalculate_GDP_and_PUs_on_demand = yes

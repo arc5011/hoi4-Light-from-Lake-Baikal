@@ -1,7 +1,7 @@
 ideas = {
 	hidden_ideas = {
 		COX_China_Hidden_factory = {
-			name = "COX_Hidden_factory"
+			name = "COX_China_Hidden_factory"
 			modifier = {
 				free_production_units_modifier = 2
 			}
@@ -10,6 +10,13 @@ ideas = {
 			name = "COX_rebuild_Lanzhou_industrial_zone"
 			modifier = {
 				free_production_units_modifier = 2
+			}
+		}
+
+		COX_fuck_TNO_economy = {
+			name = "COX_fuck_TNO_economy"
+			modifier = {
+				misc_income_modifier = 0.2
 			}
 		}
 	}
@@ -125,7 +132,7 @@ ideas = {
 			modifier = {
 				stability_factor = 0.1
 				compliance_gain = 0.05
-				political_power_factor = -0.1
+				political_power_factor = 0.1
 				civilian_expenditures_factor = 0.1
 				consumer_goods_use_modifier = -0.03
 			}
@@ -137,7 +144,7 @@ ideas = {
 				stability_factor = 0.1
 				resistance_growth = -0.2
 				compliance_gain = 0.15
-				political_power_factor = -0.2
+				political_power_factor =0.2
 				civilian_expenditures_factor = 0.1
 				consumer_goods_use_modifier = -0.03
 			}
@@ -498,16 +505,14 @@ ideas = {
 			picture = chaotic_band
 			name = "chaotic_band"
 			modifier = {
-				political_power_gain = -0.3
 				conscription_factor = -0.15
-				stability_weekly_factor = -0.005
+				stability_factor = -0.05
 			}
 		}
 		chaotic_band2 = {
 			picture = chaotic_band
 			name = "chaotic_band"
 			modifier = {
-				political_power_gain = -0.2
 				conscription_factor = -0.1
 				stability_weekly_factor = -0.003
 			}
@@ -516,7 +521,6 @@ ideas = {
 			picture = chaotic_band
 			name = "chaotic_band"
 			modifier = {
-				political_power_gain = -0.1
 				conscription_factor = -0.05
 				stability_weekly_factor = -0.001
 			}
@@ -705,7 +709,7 @@ ideas = {
 				breakthrough_bonus_against = 0.1
 			}
 		}
-		#if线国策部分
+		#---IF线国策相关---#
 		COX_Light_The_Fire = {
 			name = "COX_Light_The_Fire"
 			modifier = {
@@ -734,7 +738,7 @@ ideas = {
 				breakthrough_factor = 0.2
 			}
 		}
-		COX_Once_And_For_All = {
+		COX_Once_And_For_All = {#暂时无引用
 			name = "COX_Once_And_For_All"
 			modifier = {
 				breakthrough_factor = 0.1
@@ -760,7 +764,7 @@ ideas = {
 		COX_Logistics_Support_1 = {
 			name = "COX_Logistics_Support"
 			equipment_bonus = {
-				carrier_equipment = {
+				support_equipment = {
 					build_cost_ic = -0.05
 					instant = yes
 				}
@@ -774,7 +778,7 @@ ideas = {
 		COX_Logistics_Support_2 = {
 			name = "COX_Logistics_Support"
 			equipment_bonus = {
-				carrier_equipment = {
+				support_equipment = {
 					build_cost_ic = -0.05
 					instant = yes
 				}
@@ -827,6 +831,51 @@ ideas = {
 				recruitable_population_factor = 0.1
 				recruitable_population = 0.01
 				stability_weekly = 0.002
+			}
+		}
+		#---IF线联合政府---#
+		COX_opposite = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			picture = YUN_opposite
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.15
+			}
+		}
+		COX_division = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			picture = YUN_division
+			modifier = {
+				line_change_production_efficiency_factor = -0.25
+				army_org_factor = -0.1
+			}
+		}
+		#---IF线PRC---#
+		#---杂项---#
+		JAP_sphere_no_war = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			picture = JAP_sphere_betryal
+			modifier = {
+				ai_join_ally_desire_factor = -1000
+			}
+		}
+		JAP_puppet_no_war = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			picture = JAP_sphere_betryal
+			modifier = {
+				ai_call_ally_desire_factor = -1000
+			}
+		}
+		COX_TIB_problem = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			picture = COX_TIB_problem
+			modifier = {
+				stability_factor = -0.05
 			}
 		}
 	}

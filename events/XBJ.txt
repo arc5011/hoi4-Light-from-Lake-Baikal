@@ -75,6 +75,9 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = XBJ.6.a
+		hidden_effect = {
+			clr_global_flag = LFB_XBJ_QIN_war
+		}
 	}
 }
 
@@ -260,8 +263,8 @@ country_event = {
 				QIN = {
 					save_global_event_target_as = losing_country
 				}
-				set_global_flag = losing_country_multiple
-				set_global_flag = winning_country_multiple
+				#set_global_flag = losing_country_multiple
+				#set_global_flag = winning_country_multiple
 				XBJ = {
 					# winner simply gets GDP recalculated :
 					recalculate_GDP_and_PUs_on_demand = yes
@@ -317,15 +320,10 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = XBJ.19.a
-		#if = {
-		#	limit = { 
-		#		NOT = {YUN = {  is_subject_of = CHI}}
-		#	}
 		country_event = {
 			id = XBJ.21
 			days = 5
 		}
-		#}
 	}
 }
 
@@ -338,19 +336,15 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = XBJ.20.a
-		#if = {
-		#	limit = { 
-		#		NOT = {YUN = {  is_subject_of = CHI}}
-		#	}
 		country_event = {
 			id = XBJ.21
 			days = 5
 		}
-		#}
 		add_popularity = {
 			ideology = paternalism
 			popularity = 0.05
 		}
+		
 		XBJ_Jiang_Jingguo = {
 			add_corps_commander_role = {
 				skill = 2
@@ -366,15 +360,14 @@ country_event = {
 			country_leader = {
 				ideology = paternalism_xunzheng_subtype
 				expire = "1999.1.1"
-				traits = {
-				}
+				traits = { }
 				id = -1
 			}
 		}
 		set_party_name = {
 			ideology = paternalism
-			long_name = XBJ_NRA
-			name = XBJ_NRA_long
+			name = XBJ_NRA
+			long_name = XBJ_NRA_long
 		}
 	}
 }
@@ -451,8 +444,20 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = XBJ.25.a
-		custom_effect_tooltip = XBJ_COX_shentou_END2
-		TNO_Country_Closing_Screen_Show = yes
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						rule = LFB_GAW_status
+						option = LONG_YUN_WETDREAM_ENABLED
+					}
+				}
+			}
+			custom_effect_tooltip = XBJ_COX_shentou_END2
+			set_country_flag = XBJ_early_end
+			TNO_Country_Closing_Screen_Show = yes
+		}
+		
 	}
 }
 
